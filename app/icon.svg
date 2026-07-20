@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="13" fill="#071a30"/>
+  <path d="M9 8h45v20" fill="none" stroke="#ffffff" stroke-width="4.5"/>
+  <path d="M9 20v36" fill="none" stroke="#d9a94e" stroke-width="4.5"/>
+  <path d="M21 56h33V36" fill="none" stroke="#82a9d0" stroke-width="4.5"/>
+  <text x="32" y="39" text-anchor="middle" font-family="Georgia, serif" font-size="15" fill="#ffffff" letter-spacing="-1.7">
+    P<tspan fill="#d9a94e">M</tspan>E
+  </text>
+</svg>
