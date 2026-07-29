@@ -81,8 +81,14 @@ test("advertises only real routes through complete crawler metadata", () => {
 test("states the attorney and CPA boundary in normal and compact content", () => {
   const home = readFileSync(join(ROOT, "app/page.tsx"), "utf8");
   const footer = readFileSync(join(ROOT, "components/Footer.tsx"), "utf8");
+  const compactFooter = footer.slice(
+    footer.indexOf("if (compact)"),
+    footer.indexOf("\n\n  return ("),
+  );
 
   assert.match(home, /not an estate attorney or CPA/);
-  assert.match(footer, /does not provide legal or tax advice/);
-  assert.match(footer, /does not draft legal documents or prepare\s+tax returns/);
+  assert.match(compactFooter, /does not provide legal or tax advice/);
+  assert.match(compactFooter, /does not draft legal documents or prepare\s+tax returns/);
+  assert.match(compactFooter, /existing estate attorneys and CPAs/);
+  assert.match(compactFooter, /identify qualified independent professionals/);
 });

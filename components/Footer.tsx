@@ -15,7 +15,9 @@ export default function Footer({ compact = false }: { compact?: boolean }) {
               Investment advisory services are offered through MSA Financial, LLC, a Registered
               Investment Adviser (CRD #107768). Michael Cammarata is not an attorney or CPA and
               does not provide legal or tax advice. He does not draft legal documents or prepare
-              tax returns; he coordinates with clients&apos; independent professionals.
+              tax returns. He coordinates with clients&apos; existing estate attorneys and CPAs.
+              When needed, he can help identify qualified independent professionals; clients
+              choose and engage them directly.
             </p>
             <p>
               © 2026 MSA Financial, LLC · All Rights Reserved ·{" "}
