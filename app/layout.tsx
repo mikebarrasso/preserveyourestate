@@ -12,7 +12,7 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://preserveyourestate.com"),
+  metadataBase: new URL("https://preservemyestate.com"),
   title: {
     default:
       "Estate & Tax-Focused Wealth Management in Massachusetts | Michael Cammarata, CFP®, MSA Financial",
@@ -20,6 +20,18 @@ export const metadata: Metadata = {
   },
   description:
     "Massachusetts taxes estates over $2M. Michael Cammarata, CFP® coordinates wealth, estate, and tax planning for MA families, backed by MSA Financial, an independent RIA since 1997. Free MA estate tax calculator.",
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://preservemyestate.com",
+    siteName: "Preserve My Estate",
+    title:
+      "Estate & Tax-Focused Wealth Management in Massachusetts | Michael Cammarata, CFP®",
+    description:
+      "Coordinated wealth, estate, tax, and retirement planning for Massachusetts families.",
+  },
 };
 
 export default function RootLayout({

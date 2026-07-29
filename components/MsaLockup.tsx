@@ -1,19 +1,22 @@
-/* HTML recreation of the MSA Financial logo lockup.
-   Swap for the client's vector files when received. */
+import Image from "next/image";
+
 export default function MsaLockup() {
   return (
-    <div className="msa-lockup">
-      <div className="msa-mark">
-        <span>
-          MS
-          <br />
-          &amp;A
-        </span>
-      </div>
-      <div className="msa-text">
-        <b>MSA FINANCIAL</b>
-        <span>Financial Planning · Asset Management · Since 1997</span>
-      </div>
-    </div>
+    <a
+      className="msa-lockup"
+      href="https://www.msaplan.com/"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Visit MSA Financial"
+    >
+      <Image
+        className="msa-logo"
+        src="/msa-financial-logo.png"
+        alt="MSA Financial — Financial Planning, Asset Management, Since 1997"
+        width={600}
+        height={132}
+        sizes="(max-width: 640px) 240px, 300px"
+      />
+    </a>
   );
 }
