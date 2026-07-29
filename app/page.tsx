@@ -15,23 +15,36 @@ import { BookingForm } from "@/components/LeadForms";
 const MAIN_OFFICE_PHONE = "(781) 843-3500";
 const MAIN_OFFICE_PHONE_HREF = "tel:+17818433500";
 
-const OFFICES = [
+type Office = {
+  city: string;
+  label: string;
+  address: string;
+  streetAddress?: string;
+  postalCode: string;
+};
+
+const OFFICES: readonly Office[] = [
   {
     city: "Braintree",
     label: "South Shore headquarters",
     address: "25 Braintree Hill Park, Suite 303, Braintree, MA 02184",
+    streetAddress: "25 Braintree Hill Park, Suite 303",
+    postalCode: "02184",
   },
   {
     city: "Sandwich",
     label: "Cape Cod & the Islands",
     address: "90 Route 6A, Unit 4A, Sandwich, MA 02563",
+    streetAddress: "90 Route 6A, Unit 4A",
+    postalCode: "02563",
   },
   {
     city: "Framingham",
     label: "MetroWest — by appointment",
-    address: "Framingham, MA 01701",
+    address: "By appointment, Framingham, MA 01701",
+    postalCode: "01701",
   },
-] as const;
+];
 
 const GAPS: Gap[] = [
   {
@@ -76,7 +89,7 @@ const JSON_LD = {
     {
       "@type": ["FinancialService", "Organization"], "@id": "https://preservemyestate.com/#org", name: "MSA Financial, LLC", url: "https://preservemyestate.com/", telephone: "+1-781-843-3500", foundingDate: "1997", description:
         "Independent SEC-registered investment adviser (CRD #107768) providing coordinated wealth, estate, and tax planning across Massachusetts.", address: OFFICES.map((office) => ({
-        "@type": "PostalAddress", addressLocality: office.city, addressRegion: "MA", streetAddress: office.address,
+        "@type": "PostalAddress", streetAddress: office.streetAddress, addressLocality: office.city, addressRegion: "MA", postalCode: office.postalCode, addressCountry: "US",
       })), areaServed: { "@type": "State", name: "Massachusetts" }, sameAs: ["https://www.msaplan.com/", "https://adviserinfo.sec.gov/firm/summary/107768"], }, {
       "@type": "Person", "@id": "https://preservemyestate.com/#michael", name: "Michael Cammarata", honorificSuffix: "CFP®", jobTitle: "Managing Partner and Owner", image: "https://preservemyestate.com/michael-cammarata.jpg", worksFor: { "@id": "https://preservemyestate.com/#org" }, knowsAbout: [
         "Massachusetts estate tax", "Roth conversion planning", "trust funding", "tax-efficient investing", ], }, { "@type": "WebSite", url: "https://preservemyestate.com/", name: "Preserve My Estate" }, {
@@ -297,11 +310,11 @@ export default function Home() {
               recommendations or ensuring that the plan is implemented.
             </p>
             <p>
-              Michael serves as that central point of coordination. He works alongside each
-              client&apos;s existing professionals—or helps identify qualified independent
-              professionals when needed—to align the estate documents, tax strategy, investment
-              portfolio, and retirement plan around the same objectives. He does not draft legal
-              documents or prepare tax returns.
+              Michael is not an estate attorney or CPA. He serves as the central point of
+              coordination, working alongside each client&apos;s existing professionals—or helping
+              identify qualified independent professionals when needed—to align the estate
+              documents, tax strategy, investment portfolio, and retirement plan around the same
+              objectives. He does not draft legal documents or prepare tax returns.
             </p>
             <p>
               As both a financial advisor and an owner of his own business, Michael understands
@@ -337,7 +350,7 @@ export default function Home() {
               <Image
                 className="portrait-photo"
                 src="/michael-cammarata.jpg"
-                alt="Michael Cammarata, CFP®"
+                alt=""
                 width={190}
                 height={190}
                 sizes="190px"

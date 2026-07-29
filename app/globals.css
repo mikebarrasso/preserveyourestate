@@ -876,7 +876,7 @@ input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; border-radius
   padding-top: 1.35rem;
   border-top: 1px solid rgba(255, 255, 255, 0.09);
 }
-.footer-legal { padding-top: 2rem; font-size: 0.74rem; line-height: 1.7; color: rgba(208,228,245,0.45); }
+.footer-legal { padding-top: 2rem; font-size: 0.8rem; line-height: 1.7; color: rgba(208,228,245,0.68); }
 .footer-legal p { margin-bottom: 0.8rem; }
 
 /* Sticky mobile CTA */

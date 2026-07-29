@@ -46,7 +46,7 @@ test("includes Michael's complete positioning and professional boundaries", () =
   assert.match(home, /Managing Partner and Owner/);
   assert.match(home, /For more than two decades/);
   assert.match(home, /Preserve My Estate reflects an important part of Michael(?:’|&apos;)s practice/);
-  assert.match(home, /central point of coordination/);
+  assert.match(home, /central point of\s+coordination/);
   assert.match(home, /does not draft legal\s+documents or prepare tax returns/);
   assert.match(home, /qualified independent\s+professionals when needed/);
 });
@@ -60,4 +60,29 @@ test("uses local official profile and MSA brand assets", () => {
   assert.match(home, /michael-cammarata\.jpg/);
   assert.match(lockup, /msa-financial-logo\.png/);
   assert.match(lockup, /https:\/\/www\.msaplan\.com/);
+});
+
+test("advertises only real routes through complete crawler metadata", () => {
+  const sitemapPath = join(ROOT, "app/sitemap.ts");
+  const llms = readFileSync(join(ROOT, "public/llms.txt"), "utf8");
+  const calculator = readFileSync(join(ROOT, "app/calculator/page.tsx"), "utf8");
+  const guide = readFileSync(join(ROOT, "app/guides/ab-trust/page.tsx"), "utf8");
+
+  assert.equal(existsSync(sitemapPath), true);
+  const sitemap = readFileSync(sitemapPath, "utf8");
+  assert.match(sitemap, /const BASE_URL = "https:\/\/preservemyestate\.com"/);
+  assert.match(sitemap, /\$\{BASE_URL\}\/calculator/);
+  assert.match(sitemap, /\$\{BASE_URL\}\/guides\/ab-trust/);
+  assert.doesNotMatch(llms, /guides\/(?:trust-funding|roth-conversion)/);
+  assert.match(calculator, /siteName: "Preserve My Estate"/);
+  assert.match(guide, /siteName: "Preserve My Estate"/);
+});
+
+test("states the attorney and CPA boundary in normal and compact content", () => {
+  const home = readFileSync(join(ROOT, "app/page.tsx"), "utf8");
+  const footer = readFileSync(join(ROOT, "components/Footer.tsx"), "utf8");
+
+  assert.match(home, /not an estate attorney or CPA/);
+  assert.match(footer, /does not provide legal or tax advice/);
+  assert.match(footer, /does not draft legal documents or prepare\s+tax returns/);
 });

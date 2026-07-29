@@ -13,8 +13,9 @@ export default function Footer({ compact = false }: { compact?: boolean }) {
           <div className="footer-legal" style={{ paddingTop: 0 }}>
             <p>
               Investment advisory services are offered through MSA Financial, LLC, a Registered
-              Investment Adviser (CRD #107768). Educational content only, not legal, tax, or
-              investment advice.
+              Investment Adviser (CRD #107768). Michael Cammarata is not an attorney or CPA and
+              does not provide legal or tax advice. He does not draft legal documents or prepare
+              tax returns; he coordinates with clients&apos; independent professionals.
             </p>
             <p>
               © 2026 MSA Financial, LLC · All Rights Reserved ·{" "}
