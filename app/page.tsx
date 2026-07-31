@@ -350,10 +350,12 @@ export default function Home() {
               <Image
                 className="portrait-photo"
                 src="/michael-cammarata.jpg"
-                alt=""
-                width={190}
-                height={190}
+                alt="Michael Cammarata, CFP®"
+                width={380}
+                height={380}
+                quality={95}
                 sizes="190px"
+                priority
               />
               <h3>Michael Cammarata, CFP®</h3>
               <p className="role">Managing Partner and Owner · MSA Financial, LLC</p>

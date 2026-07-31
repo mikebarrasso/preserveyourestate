@@ -3,6 +3,31 @@ import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { extname, join } from "node:path";
 import test from "node:test";
 
+function jpegDimensions(path) {
+  const data = readFileSync(path);
+  let offset = 2;
+
+  while (offset < data.length) {
+    if (data[offset] !== 0xff) {
+      offset += 1;
+      continue;
+    }
+
+    const marker = data[offset + 1];
+    if (marker === 0xc0 || marker === 0xc2) {
+      return {
+        height: data.readUInt16BE(offset + 5),
+        width: data.readUInt16BE(offset + 7),
+      };
+    }
+
+    const length = data.readUInt16BE(offset + 2);
+    offset += 2 + length;
+  }
+
+  throw new Error(`Could not read JPEG dimensions from ${path}`);
+}
+
 const ROOT = new URL(".", import.meta.url).pathname;
 const SOURCE_ROOTS = ["app", "components", "public"];
 const TEXT_EXTENSIONS = new Set([".css", ".md", ".tsx", ".txt"]);
@@ -58,8 +83,14 @@ test("uses local official profile and MSA brand assets", () => {
   assert.equal(existsSync(join(ROOT, "public/michael-cammarata.jpg")), true);
   assert.equal(existsSync(join(ROOT, "public/msa-financial-logo.png")), true);
   assert.match(home, /michael-cammarata\.jpg/);
+  assert.match(home, /width=\{380\}/);
+  assert.match(home, /quality=\{95\}/);
   assert.match(lockup, /msa-financial-logo\.png/);
   assert.match(lockup, /https:\/\/www\.msaplan\.com/);
+
+  const headshot = jpegDimensions(join(ROOT, "public/michael-cammarata.jpg"));
+  assert.ok(headshot.width >= 380, `headshot width ${headshot.width}px is below retina minimum`);
+  assert.ok(headshot.height >= 380, `headshot height ${headshot.height}px is below retina minimum`);
 });
 
 test("advertises only real routes through complete crawler metadata", () => {

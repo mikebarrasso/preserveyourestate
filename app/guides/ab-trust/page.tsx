@@ -187,9 +187,11 @@ export default function AbTrustGuide() {
             <Image
               className="byline-photo"
               src="/michael-cammarata.jpg"
-              alt=""
-              width={60}
-              height={60}
+              alt="Michael Cammarata, CFP®"
+              width={120}
+              height={120}
+              quality={90}
+              sizes="60px"
             />
             <div>
               <b>Michael Cammarata, CFP®</b>
