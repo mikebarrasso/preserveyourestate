@@ -7,10 +7,19 @@ import CalcTool from "./CalcTool";
 export const metadata: Metadata = {
   title: "Massachusetts Estate Tax Calculator (2026), Free Estimate in 60 Seconds", description:
     "Free Massachusetts estate tax calculator. Enter your estate value and see your estimated MA estate tax under 2026 law (M.G.L. c. 65C), plus what coordinated trust planning could save a married couple.",
+  alternates: { canonical: "/calculator" },
+  openGraph: {
+    type: "website",
+    url: "/calculator",
+    siteName: "Preserve My Estate",
+    title: "Massachusetts Estate Tax Calculator (2026)",
+    description:
+      "Estimate your Massachusetts estate tax under 2026 law and see what coordinated planning could change.",
+  },
 };
 
 const JSON_LD = {
-  "@context": "https://schema.org", "@type": "WebApplication", name: "Massachusetts Estate Tax Calculator", url: "https://preserveyourestate.com/calculator", applicationCategory: "FinanceApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, provider: { "@type": "Organization", name: "MSA Financial, LLC" },
+  "@context": "https://schema.org", "@type": "WebApplication", name: "Massachusetts Estate Tax Calculator", url: "https://preservemyestate.com/calculator", applicationCategory: "FinanceApplication", operatingSystem: "Web", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" }, provider: { "@type": "Organization", name: "MSA Financial, LLC" },
 };
 
 export default function CalculatorPage() {

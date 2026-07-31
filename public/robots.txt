@@ -1,4 +1,4 @@
-# PreserveYourEstate.com, AI search bots welcome (citation = leads)
+# PreserveMyEstate.com, AI search bots welcome (citation = leads)
 User-agent: *
 Allow: /
 
@@ -20,4 +20,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://preserveyourestate.com/sitemap.xml
+Sitemap: https://preservemyestate.com/sitemap.xml

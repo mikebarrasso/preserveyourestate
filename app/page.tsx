@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -10,6 +11,40 @@ import ReadinessChecklist from "@/components/ReadinessChecklist";
 import FitSection from "@/components/FitSection";
 import Faq, { type FaqItem } from "@/components/Faq";
 import { BookingForm } from "@/components/LeadForms";
+
+const MAIN_OFFICE_PHONE = "(781) 843-3500";
+const MAIN_OFFICE_PHONE_HREF = "tel:+17818433500";
+
+type Office = {
+  city: string;
+  label: string;
+  address: string;
+  streetAddress?: string;
+  postalCode: string;
+};
+
+const OFFICES: readonly Office[] = [
+  {
+    city: "Braintree",
+    label: "South Shore headquarters",
+    address: "25 Braintree Hill Park, Suite 303, Braintree, MA 02184",
+    streetAddress: "25 Braintree Hill Park, Suite 303",
+    postalCode: "02184",
+  },
+  {
+    city: "Sandwich",
+    label: "Cape Cod & the Islands",
+    address: "90 Route 6A, Unit 4A, Sandwich, MA 02563",
+    streetAddress: "90 Route 6A, Unit 4A",
+    postalCode: "02563",
+  },
+  {
+    city: "Framingham",
+    label: "MetroWest — by appointment",
+    address: "By appointment, Framingham, MA 01701",
+    postalCode: "01701",
+  },
+];
 
 const GAPS: Gap[] = [
   {
@@ -52,10 +87,12 @@ const FAQ_ITEMS: FaqItem[] = [
 const JSON_LD = {
   "@context": "https://schema.org", "@graph": [
     {
-      "@type": ["FinancialService", "Organization"], "@id": "https://preserveyourestate.com/#org", name: "MSA Financial, LLC", url: "https://preserveyourestate.com/", foundingDate: "1997", description:
-        "Independent SEC-registered investment adviser (CRD #107768) providing coordinated wealth, estate, and tax planning across Massachusetts.", areaServed: { "@type": "State", name: "Massachusetts" }, sameAs: ["https://adviserinfo.sec.gov/firm/summary/107768"], }, {
-      "@type": "Person", "@id": "https://preserveyourestate.com/#michael", name: "Michael Cammarata", honorificSuffix: "CFP®", jobTitle: "Managing Partner", worksFor: { "@id": "https://preserveyourestate.com/#org" }, knowsAbout: [
-        "Massachusetts estate tax", "Roth conversion planning", "trust funding", "tax-efficient investing", ], }, { "@type": "WebSite", url: "https://preserveyourestate.com/", name: "Preserve My Estate" }, {
+      "@type": ["FinancialService", "Organization"], "@id": "https://preservemyestate.com/#org", name: "MSA Financial, LLC", url: "https://preservemyestate.com/", telephone: "+1-781-843-3500", foundingDate: "1997", description:
+        "Independent SEC-registered investment adviser (CRD #107768) providing coordinated wealth, estate, and tax planning across Massachusetts.", address: OFFICES.map((office) => ({
+        "@type": "PostalAddress", streetAddress: office.streetAddress, addressLocality: office.city, addressRegion: "MA", postalCode: office.postalCode, addressCountry: "US",
+      })), areaServed: { "@type": "State", name: "Massachusetts" }, sameAs: ["https://www.msaplan.com/", "https://adviserinfo.sec.gov/firm/summary/107768"], }, {
+      "@type": "Person", "@id": "https://preservemyestate.com/#michael", name: "Michael Cammarata", honorificSuffix: "CFP®", jobTitle: "Managing Partner and Owner", image: "https://preservemyestate.com/michael-cammarata.jpg", worksFor: { "@id": "https://preservemyestate.com/#org" }, knowsAbout: [
+        "Massachusetts estate tax", "Roth conversion planning", "trust funding", "tax-efficient investing", ], }, { "@type": "WebSite", url: "https://preservemyestate.com/", name: "Preserve My Estate" }, {
       "@type": "FAQPage", mainEntity: FAQ_TEXT.map((f) => ({
         "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a }, })), }, ],
 };
@@ -242,34 +279,67 @@ export default function Home() {
           <div className="about-copy reveal">
             <p className="eyebrow">About Michael</p>
             <h2 style={{ margin: "1rem 0 1.4rem" }}>
-              A CFP® at the center of coordinated wealth, estate &amp; tax planning,{" "}
-              <em>backed by a firm built since 1997</em>
+              See the entire financial picture.{" "}
+              <em>Keep every part working together.</em>
             </h2>
             <p>
-              Michael Cammarata is Managing Partner at MSA Financial, LLC, an independent,
-              SEC-registered investment adviser managing roughly $1.5 billion for Massachusetts
-              families. For more than two decades, his practice has focused on the households
-              most exposed to Massachusetts&apos; estate and tax rules, in or approaching
-              retirement.
+              Michael Cammarata is a CERTIFIED FINANCIAL PLANNER® practitioner and an owner and
+              Managing Partner of MSA Financial, LLC. For more than two decades, he has helped
+              families, business owners, and executives make informed decisions about their
+              wealth—particularly when investment management, retirement, taxes, and estate
+              planning intersect.
             </p>
             <p>
-              The difference is integration: estate plans that are actually funded, portfolios
-              positioned around the estate structure, Roth conversions calibrated to real
-              brackets and surtax thresholds. Behind it is a full firm, not a solo practice:
-              seven advisors, full-time compliance and operations, grown since 1997 almost
-              entirely by referral.
+              For many clients, the relationship begins with a specific concern: Massachusetts
+              estate-tax exposure, an outdated or unfunded trust, a business transition, a
+              concentrated investment position, or uncertainty about generating dependable
+              retirement income. Michael&apos;s role is to look beyond the immediate question and
+              determine how each decision affects the client&apos;s complete financial picture.
             </p>
-            <blockquote className="quote">
-              &ldquo;My clients aren&apos;t looking for a product. They&apos;re looking for
-              someone who can see the whole board and make the estate plan, the tax return, and
-              the portfolio agree with each other.&rdquo;
-            </blockquote>
+            <p>
+              Preserve My Estate reflects an important part of Michael&apos;s practice, but not
+              its full scope. His work includes comprehensive financial planning, investment
+              management, retirement-income planning, Roth-conversion and RMD strategies,
+              capital-gains management, charitable planning, trust-funding and beneficiary
+              reviews, business-owner succession planning, and executive compensation strategies.
+            </p>
+            <p>
+              Michael believes affluent families rarely suffer from a lack of professional
+              advice. The more common problem is that their financial advisor, estate attorney,
+              and CPA are working independently—with no one responsible for connecting their
+              recommendations or ensuring that the plan is implemented.
+            </p>
+            <p>
+              Michael is not an estate attorney or CPA. He serves as the central point of
+              coordination, working alongside each client&apos;s existing professionals—or helping
+              identify qualified independent professionals when needed—to align the estate
+              documents, tax strategy, investment portfolio, and retirement plan around the same
+              objectives. He does not draft legal documents or prepare tax returns.
+            </p>
+            <p>
+              As both a financial advisor and an owner of his own business, Michael understands
+              that financial decisions affect more than an account balance. They influence a
+              family&apos;s lifestyle, employees, business partners, future opportunities, and the
+              legacy an owner ultimately wants to leave.
+            </p>
+            <p>
+              Michael&apos;s clients receive the personal attention of a boutique advisory
+              relationship backed by the strength and resources of MSA Financial—the independent
+              advisory firm he owns and leads alongside his partners. Established in 1997, MSA
+              Financial is an SEC-registered investment adviser managing approximately $1.5
+              billion in client assets.
+            </p>
+            <p>
+              Michael&apos;s objective is straightforward: help clients see the entire financial
+              picture, make thoughtful decisions, and keep every part of their financial lives
+              working together over time.
+            </p>
             <div className="about-badges">
               <span className="badge">CFP®</span>
+              <span className="badge">Managing Partner and Owner</span>
               <span className="badge">Fiduciary</span>
               <span className="badge">Fee-Based</span>
               <span className="badge">RIA · MSA Financial, LLC</span>
-              <span className="badge">Team of 7 Advisors</span>
             </div>
             <a className="btn btn-navy" href="#booking">
               Schedule a 45-Minute Review <span className="arrow">→</span>
@@ -277,12 +347,20 @@ export default function Home() {
           </div>
           <div className="about-side reveal-scale">
             <div className="portrait-card">
-              <div className="portrait-mono">MC</div>
+              <Image
+                className="portrait-photo"
+                src="/michael-cammarata.jpg"
+                alt=""
+                width={190}
+                height={190}
+                sizes="190px"
+              />
               <h3>Michael Cammarata, CFP®</h3>
-              <p className="role">Managing Partner · MSA Financial, LLC</p>
-              <p style={{ fontSize: "0.92rem" }}>
-                Coordinated wealth, estate, and tax planning for Massachusetts families. Offices
-                in Braintree, Sandwich, and Framingham.
+              <p className="role">Managing Partner and Owner · MSA Financial, LLC</p>
+              <p className="advisor-note">
+                Michael coordinates closely with clients&apos; CPAs and estate attorneys. When a
+                client needs a professional, he can help identify qualified independent advisors;
+                clients choose and engage those professionals directly.
               </p>
               <hr />
               <MsaLockup />
@@ -356,6 +434,22 @@ export default function Home() {
               Offices in Braintree (South Shore headquarters), Sandwich (Cape Cod &amp; the
               Islands), and Framingham (MetroWest), serving families across Massachusetts.
             </p>
+            <ul className="loc-list">
+              {OFFICES.map((office) => (
+                <li key={office.city}>
+                  <b>
+                    <span className="pin" aria-hidden="true">◆</span>
+                    {office.city}
+                  </b>
+                  <span>{office.address}</span>
+                  <span>
+                    <a href={MAIN_OFFICE_PHONE_HREF}>{MAIN_OFFICE_PHONE}</a>
+                    {" · "}
+                    Main-office receptionist
+                  </span>
+                </li>
+              ))}
+            </ul>
           </div>
           <div className="map-card reveal-scale">
             <video

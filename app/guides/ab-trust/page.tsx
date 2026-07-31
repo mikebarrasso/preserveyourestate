@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
@@ -6,12 +7,24 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "The Marital Deduction Trust & A/B Trust Planning in Massachusetts (2026)", description:
     "How Credit Shelter Trusts and QTIP structures let married Massachusetts couples use both $2M exemptions, with a worked example for an $8M estate. By Michael Cammarata, CFP®.",
+  alternates: { canonical: "/guides/ab-trust" },
+  openGraph: {
+    type: "article",
+    url: "/guides/ab-trust",
+    siteName: "Preserve My Estate",
+    title: "The Marital Deduction Trust & A/B Trust Planning in Massachusetts",
+    description:
+      "How Credit Shelter Trusts and QTIP structures can preserve both spouses' Massachusetts estate-tax exemptions.",
+    publishedTime: "2026-07-01",
+    modifiedTime: "2026-07-29",
+    authors: ["Michael Cammarata, CFP®"],
+  },
 };
 
 const JSON_LD = {
   "@context": "https://schema.org", "@type": "Article", headline: "The Marital Deduction Trust & A/B Trust Planning in Massachusetts", description:
     "How Credit Shelter Trusts and QTIP structures allow married Massachusetts couples to use both spouses' exemptions.", author: {
-    "@type": "Person", name: "Michael Cammarata", honorificSuffix: "CFP®", jobTitle: "Managing Partner, MSA Financial, LLC", }, publisher: { "@type": "Organization", name: "MSA Financial, LLC" }, datePublished: "2026-07-01", dateModified: "2026-07-15",
+    "@type": "Person", "@id": "https://preservemyestate.com/#michael", name: "Michael Cammarata", honorificSuffix: "CFP®", jobTitle: "Managing Partner and Owner", url: "https://preservemyestate.com/#about", image: "https://preservemyestate.com/michael-cammarata.jpg", worksFor: { "@id": "https://preservemyestate.com/#org" }, }, publisher: { "@type": "Organization", "@id": "https://preservemyestate.com/#org", name: "MSA Financial, LLC" }, datePublished: "2026-07-01", dateModified: "2026-07-29",
 };
 
 export default function AbTrustGuide() {
@@ -171,13 +184,19 @@ export default function AbTrustGuide() {
           </div>
 
           <div className="byline-card">
-            <div className="portrait-mono">MC</div>
+            <Image
+              className="byline-photo"
+              src="/michael-cammarata.jpg"
+              alt=""
+              width={60}
+              height={60}
+            />
             <div>
               <b>Michael Cammarata, CFP®</b>
               <p>
-                Managing Partner, MSA Financial, LLC (CRD #107768), an independent RIA managing
-                ~$1.5B since 1997. Michael coordinates wealth, estate, and tax planning for
-                Massachusetts families with $2M+ in investable assets.
+                Managing Partner and Owner, MSA Financial, LLC (CRD #107768), an independent RIA
+                managing ~$1.5B. Michael coordinates wealth, estate, tax, and retirement planning
+                for Massachusetts families.
               </p>
             </div>
           </div>

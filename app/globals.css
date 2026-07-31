@@ -1,5 +1,5 @@
 /* ============================================================
-   PreserveYourEstate.com, Design System
+   PreserveMyEstate.com, Design System
    Michael Cammarata, CFP® · MSA Financial, LLC
    ============================================================ */
 
@@ -562,14 +562,13 @@ input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; border-radius
 .about-side { position: sticky; top: 110px; }
 .portrait-card { background: linear-gradient(165deg, var(--navy-dark), var(--navy)); border-radius: var(--radius); padding: 2.6rem 2.4rem; color: var(--white); box-shadow: var(--shadow-lg); }
 .portrait-mono { width: 84px; height: 84px; border-radius: 50%; background: linear-gradient(135deg, var(--gold-lt), var(--gold)); color: var(--navy-deep); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 1.9rem; font-weight: 600; margin-bottom: 1.4rem; }
+.portrait-photo { width: 190px; height: 190px; object-fit: cover; border-radius: 50%; margin: 0 auto 1.5rem; border: 3px solid rgba(255,255,255,0.85); box-shadow: 0 10px 30px rgba(5,18,32,0.35); }
 .portrait-card h3 { color: var(--white); font-size: 1.5rem; }
 .portrait-card .role { color: var(--gold-lt); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; margin: 0.4rem 0 1.4rem; }
+.portrait-card .advisor-note { color: var(--silver); font-size: 0.9rem; line-height: 1.65; }
 .portrait-card hr { border: none; height: 1px; background: rgba(255,255,255,0.14); margin: 1.4rem 0; }
-.msa-lockup { display: flex; align-items: center; gap: 0.9rem; }
-.msa-mark { width: 52px; height: 52px; background: var(--msa-blue); border: 2px solid rgba(255,255,255,0.85); display: grid; place-items: center; }
-.msa-mark span { font-family: var(--serif); font-weight: 700; color: var(--white); font-size: 1.05rem; letter-spacing: 0.02em; line-height: 1; }
-.msa-text b { display: block; font-family: var(--serif); font-size: 1.05rem; letter-spacing: 0.14em; color: #c3cdd6; font-weight: 600; }
-.msa-text span { font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(195,205,214,0.75); }
+.msa-lockup { display: inline-flex; align-items: center; max-width: 300px; }
+.msa-logo { width: 100%; height: auto; }
 
 /* ============================================================
    COORDINATION HUB (service map diagram)
@@ -620,6 +619,8 @@ input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; border-radius
 .loc-list b { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; color: var(--navy); display: flex; align-items: center; gap: 0.7rem; }
 .loc-list b .pin { color: var(--gold); font-size: 0.9rem; }
 .loc-list span { font-size: 0.9rem; color: var(--muted-ink); display: block; margin-top: 0.3rem; padding-left: 1.6rem; }
+.loc-list a { color: var(--navy); font-weight: 700; text-decoration: underline; text-decoration-color: var(--gold-pale); text-underline-offset: 0.2em; }
+.loc-list a:hover { color: var(--blue); }
 .map-card { background: var(--navy-dark); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-lg); aspect-ratio: 16 / 10; }
 .loc-video { width: 100%; height: 100%; object-fit: cover; display: block; }
 .map-dot { animation: pulse 2.6s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
@@ -875,7 +876,7 @@ input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; border-radius
   padding-top: 1.35rem;
   border-top: 1px solid rgba(255, 255, 255, 0.09);
 }
-.footer-legal { padding-top: 2rem; font-size: 0.74rem; line-height: 1.7; color: rgba(208,228,245,0.45); }
+.footer-legal { padding-top: 2rem; font-size: 0.8rem; line-height: 1.7; color: rgba(208,228,245,0.68); }
 .footer-legal p { margin-bottom: 0.8rem; }
 
 /* Sticky mobile CTA */
@@ -922,6 +923,7 @@ input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; border-radius
 .article .table-scroll { overflow-x: auto; }
 .byline-card { display: flex; gap: 1.2rem; align-items: center; background: var(--cream); border-radius: var(--radius); padding: 1.5rem 1.8rem; margin: 3rem 0 0; }
 .byline-card .portrait-mono { width: 60px; height: 60px; font-size: 1.3rem; margin: 0; flex: none; }
+.byline-photo { width: 60px; height: 60px; object-fit: cover; border-radius: 50%; flex: none; }
 .byline-card b { color: var(--navy); }
 .byline-card p { margin: 0; font-size: 0.85rem; color: var(--muted-ink); }
 .next-step { background: linear-gradient(165deg, var(--navy-dark), var(--navy)); border-radius: var(--radius); padding: clamp(2rem, 4vw, 3rem); margin-top: 3.5rem; text-align: center; color: var(--silver); }

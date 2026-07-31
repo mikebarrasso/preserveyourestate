@@ -13,12 +13,15 @@ export default function Footer({ compact = false }: { compact?: boolean }) {
           <div className="footer-legal" style={{ paddingTop: 0 }}>
             <p>
               Investment advisory services are offered through MSA Financial, LLC, a Registered
-              Investment Adviser (CRD #107768). Educational content only, not legal, tax, or
-              investment advice.
+              Investment Adviser (CRD #107768). Michael Cammarata is not an attorney or CPA and
+              does not provide legal or tax advice. He does not draft legal documents or prepare
+              tax returns. He coordinates with clients&apos; existing estate attorneys and CPAs.
+              When needed, he can help identify qualified independent professionals; clients
+              choose and engage them directly.
             </p>
             <p>
               © 2026 MSA Financial, LLC · All Rights Reserved ·{" "}
-              <Link href="/">PreserveYourEstate.com</Link>
+              <Link href="/">PreserveMyEstate.com</Link>
             </p>
           </div>
         </div>
@@ -64,6 +67,8 @@ export default function Footer({ compact = false }: { compact?: boolean }) {
               SEC Registered Investment Adviser · CRD #107768
               <br />
               Braintree, MA (Main) · Sandwich · Framingham
+              <br />
+              All offices: <a href="tel:+17818433500">(781) 843-3500</a>
             </p>
             <ul style={{ marginTop: "1.2rem" }}>
               <li>
@@ -102,11 +107,12 @@ export default function Footer({ compact = false }: { compact?: boolean }) {
             Investment Adviser. Registration with the SEC does not imply a certain level of skill
             or training. This website is for educational purposes only and does not constitute
             legal, tax, or investment advice, or a solicitation to buy or sell any security.
-            Michael Cammarata is not an attorney and does not provide legal advice; estate
-            planning documents are drafted by independent Massachusetts attorneys of the
-            client&apos;s choosing. Illustrative tax figures reflect 2026 Massachusetts and federal
-            law and individual results will vary, consult a qualified professional regarding your
-            specific circumstances.
+            Michael Cammarata is not an attorney or CPA, does not provide legal advice, draft
+            legal documents, or prepare tax returns. He coordinates with clients&apos; existing
+            professionals and may help identify qualified independent attorneys or CPAs when
+            needed; clients choose and engage those professionals directly. Illustrative tax
+            figures reflect 2026 Massachusetts and federal law and individual results will vary.
+            Consult a qualified professional regarding your specific circumstances.
           </p>
           <p>
             © 2026 MSA Financial, LLC · All Rights Reserved · <a href="#">Privacy Policy</a> ·{" "}
