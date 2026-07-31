@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preserve My Estate — SEC Marketing Compliance Review · WealthReach</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wr-white:#FFFFFF; --wr-ink:#151819; --wr-green:#15B883;
+    --wr-green-50:#E7F8F1; --wr-green-100:#C7F0DF; --wr-green-700:#0C8A62;
+    --wr-cloud:#EDEFF7; --wr-smoke:#D3D6E0; --wr-steel:#BCBFCC; --wr-space:#9DA2B3;
+    --wr-graphite:#6E7180; --wr-arsenic:#40424D; --wr-phantom:#1E1E24;
+    --bg-2:#FAFBFD;
+    --radius:10px; --radius-xl:14px;
+    --shadow-sm:0 1px 2px 0 rgba(20,22,25,.05),0 1px 3px 0 rgba(20,22,25,.06);
+    --shadow-md:0 4px 6px -1px rgba(20,22,25,.07),0 2px 4px -2px rgba(20,22,25,.05);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Manrope",ui-sans-serif,system-ui,sans-serif;
+    color:var(--wr-ink); background:var(--bg-2);
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    line-height:1.6; font-size:16px;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:0 28px}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--wr-graphite)}
+  .eyebrow.green{color:var(--wr-green-700)}
+
+  header{background:var(--wr-white);border-bottom:1px solid var(--wr-smoke)}
+  .header-inner{max-width:880px;margin:0 auto;padding:20px 28px;display:flex;align-items:center;justify-content:space-between}
+  .header-inner img{height:30px;display:block}
+  .header-meta{font-size:13px;font-weight:500;color:var(--wr-graphite);text-align:right;line-height:1.45}
+
+  .cover{background:var(--wr-white);border-bottom:1px solid var(--wr-smoke);padding:72px 0 64px}
+  .cover h1{font-size:40px;line-height:1.1;letter-spacing:-.02em;font-weight:800;margin:14px 0 18px}
+  .cover .lead{font-size:18px;line-height:1.6;color:var(--wr-arsenic);max-width:640px}
+  .meta-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px 24px;margin-top:28px;max-width:640px}
+  @media(max-width:640px){.meta-grid{grid-template-columns:1fr}}
+  .meta-grid dt{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--wr-graphite)}
+  .meta-grid dd{font-size:14.5px;font-weight:600;color:var(--wr-ink);margin-top:2px}
+
+  .statrow{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--wr-smoke);border:1px solid var(--wr-smoke);border-radius:var(--radius-xl);overflow:hidden;margin:-36px auto 0;max-width:824px;box-shadow:var(--shadow-md);position:relative;z-index:2}
+  @media(max-width:720px){.statrow{grid-template-columns:1fr}}
+  .stat{background:var(--wr-white);padding:22px 20px;text-align:center}
+  .stat b{display:block;font-size:28px;font-weight:800;letter-spacing:-.02em;color:var(--wr-ink)}
+  .stat b.ok{color:var(--wr-green-700)}
+  .stat span{font-size:13px;font-weight:500;color:var(--wr-graphite)}
+
+  section{padding:56px 0 8px}
+  .section-head{margin-bottom:28px;max-width:680px}
+  .section-head h2{font-size:28px;line-height:1.15;letter-spacing:-.02em;font-weight:700;margin:10px 0 10px}
+  .section-head p{color:var(--wr-arsenic)}
+
+  .card{background:var(--wr-white);border:1px solid var(--wr-smoke);border-radius:var(--radius-xl);box-shadow:var(--shadow-sm);padding:28px 30px;margin-bottom:20px}
+  .card h3{font-size:18px;font-weight:700;letter-spacing:-.01em;margin-bottom:8px}
+  .card > p.desc{color:var(--wr-arsenic);margin-bottom:16px;max-width:680px;font-size:15px}
+  .card ul{list-style:none;margin:0}
+  .card ul li{padding:8px 0 8px 26px;position:relative;font-size:14.5px;color:var(--wr-arsenic);border-bottom:1px solid var(--wr-cloud)}
+  .card ul li:last-child{border-bottom:none}
+  .card ul li::before{content:"";position:absolute;left:2px;top:14px;width:14px;height:14px;border-radius:50%;background:var(--wr-green-50);border:1.5px solid var(--wr-green)}
+  .card ul li::after{content:"";position:absolute;left:6.5px;top:17.5px;width:4px;height:7px;border:solid var(--wr-green-700);border-width:0 1.5px 1.5px 0;transform:rotate(40deg)}
+  .card ul li b{color:var(--wr-ink);font-weight:600}
+
+  table{width:100%;border-collapse:collapse;background:var(--wr-white);font-size:14px;margin-bottom:20px;border-style:hidden;box-shadow:0 0 0 1px var(--wr-smoke),var(--shadow-sm);border-radius:var(--radius-xl);overflow:hidden}
+  th,td{padding:12px 16px;text-align:left;border-bottom:1px solid var(--wr-cloud);vertical-align:top}
+  th.check-col{width:28%}
+  th.result-col{width:12%}
+  thead th{background:var(--bg-2);font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--wr-graphite);border-bottom:1px solid var(--wr-smoke)}
+  tbody tr:last-child td{border-bottom:none}
+  td.status{white-space:nowrap;font-weight:700;font-size:12px;letter-spacing:.03em;text-transform:uppercase;color:var(--wr-green-700)}
+
+  .callout{background:var(--wr-green-50);border:1px solid var(--wr-green-100);border-radius:var(--radius);padding:16px 18px;font-size:14.5px;line-height:1.55;margin:20px 0}
+  .callout b.label{font-weight:700;color:var(--wr-green-700);text-transform:uppercase;font-size:11.5px;letter-spacing:.05em;display:block;margin-bottom:4px}
+
+  .signoff{background:var(--wr-white);border:1px solid var(--wr-smoke);border-radius:var(--radius-xl);box-shadow:var(--shadow-sm);padding:32px;margin:28px 0}
+  .signoff h3{font-size:20px;margin-bottom:10px}
+  .signoff p{color:var(--wr-arsenic);font-size:14.5px;margin-bottom:18px}
+  .sign-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:8px}
+  @media(max-width:640px){.sign-grid{grid-template-columns:1fr}}
+  .sign-block{border-top:1px solid var(--wr-smoke);padding-top:18px;min-height:140px}
+  .sign-block .label{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--wr-graphite);margin-bottom:28px}
+  .sign-block .line{border-bottom:1px solid var(--wr-ink);height:36px;margin-bottom:8px}
+  .sign-block .line.spaced{margin-top:22px}
+  .sign-block .hint{font-size:12.5px;color:var(--wr-graphite)}
+  .notes{margin-top:28px;padding-top:18px;border-top:1px solid var(--wr-cloud)}
+  .notes-label{font-size:13px;color:var(--wr-graphite);margin:0}
+  .notes-box{border:1px solid var(--wr-smoke);border-radius:10px;min-height:88px;margin-top:10px;background:var(--bg-2)}
+
+  footer{margin-top:64px;padding:32px 0 48px;border-top:1px solid var(--wr-smoke);background:var(--wr-white)}
+  .footer-inner{max-width:880px;margin:0 auto;padding:0 28px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .footer-inner img{height:22px;opacity:.9}
+  .footer-inner p{font-size:12.5px;color:var(--wr-graphite);max-width:520px}
+
+  @media print{
+    body{background:#fff}
+    .statrow{box-shadow:none}
+    section{padding:28px 0 0}
+    .signoff{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <img src="assets/wr-lockup-dark.png" alt="WealthReach">
+    <div class="header-meta">
+      SEC Marketing Compliance Review<br>
+      Prepared for MSA Financial · Revised July 31, 2026
+    </div>
+  </div>
+</header>
+
+<div class="cover">
+  <div class="wrap">
+    <p class="eyebrow green">preservemyestate.com · Post-PR internal compliance package</p>
+    <h1>Website marketing compliance review for CCO sign-off.</h1>
+    <p class="lead">
+      This revised memorandum summarizes the compliance review of the Preserve My Estate
+      production content package after PR #1, operated in connection with Marino, Stram &amp;
+      Associates, LLC d/b/a MSA Financial (CRD #107768). It is prepared for the firm’s Chief
+      Compliance Officer to support marketing approval under Advisers Act Rule 206(4)-1
+      (the Marketing Rule) and related disclosure expectations.
+    </p>
+    <dl class="meta-grid">
+      <div>
+        <dt>Adviser</dt>
+        <dd>Marino, Stram &amp; Associates, LLC d/b/a MSA Financial</dd>
+      </div>
+      <div>
+        <dt>CRD</dt>
+        <dd>#107768</dd>
+      </div>
+      <div>
+        <dt>Site reviewed</dt>
+        <dd>preservemyestate.com</dd>
+      </div>
+      <div>
+        <dt>Primary IAR featured</dt>
+        <dd>Michael P. Cammarata, CFP® (CRD #4846748)</dd>
+      </div>
+      <div>
+        <dt>Review date</dt>
+        <dd>July 31, 2026</dd>
+      </div>
+      <div>
+        <dt>Prepared by</dt>
+        <dd>WealthReach</dd>
+      </div>
+      <div>
+        <dt>Form ADV reviewed</dt>
+        <dd>Part 2A/2B effective June 18, 2026</dd>
+      </div>
+      <div>
+        <dt>Form CRS reviewed</dt>
+        <dd>May 15, 2025</dd>
+      </div>
+      <div>
+        <dt>Intended canonical domain</dt>
+        <dd>preservemyestate.com</dd>
+      </div>
+      <div>
+        <dt>Review basis</dt>
+        <dd>Merge commit e0e611a · PR #1</dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="statrow">
+    <div class="stat"><b class="ok">Clear</b><span>recommended for CCO approval</span></div>
+    <div class="stat"><b>16</b><span>compliance checks completed</span></div>
+    <div class="stat"><b class="ok">16</b><span>checks passed</span></div>
+  </div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow green">01 · Executive summary</p>
+      <h2>Overall assessment</h2>
+      <p>
+        PR #1 materially improved the biography, official branding, contact consistency,
+        crawler metadata, and attorney / CPA scope boundaries without introducing new compliance
+        concerns. We reviewed the intended production content package against the firm’s current
+        Form ADV and Form CRS, Advisers Act Rule 206(4)-1 expectations, scope-of-practice
+        language, privacy accuracy, and regulatory-link integrity. All checks listed in this
+        memorandum pass. The content package is suitable for CCO marketing approval.
+      </p>
+    </div>
+
+    <div class="callout">
+      <b class="label">Recommendation to CCO</b>
+      Approve the Preserve My Estate website content package for public use under the firm’s
+      advertising and marketing policies. Retain this memorandum and the Form ADV / Form CRS
+      versions relied upon in the firm’s marketing advertising file.
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow green">02 · Scope of review</p>
+      <h2>What was examined</h2>
+      <p>Review covered the intended production content package after PR #1. DNS cutover, route publication, and CRM wiring are deployment operations outside this marketing-content approval.</p>
+    </div>
+
+    <div class="card">
+      <h3>Surfaces reviewed</h3>
+      <ul>
+        <li><b>Homepage</b> — claims, proof row, biography, fit criteria, booking CTA, FAQ, footer</li>
+        <li><b>Calculator</b> — estimate language, savings framing, method disclaimer</li>
+        <li><b>Guides (7)</b> — educational framing, byline, not-attorney / not-advice disclaimers</li>
+        <li><b>Locations (13)</b> — local claims, office details, CTA language</li>
+        <li><b>About</b> — credentials, fiduciary language, booking ask</li>
+        <li><b>Legal</b> — Privacy Policy, Website Disclosures, Terms of Use</li>
+        <li><b>Lead form</b> — fields collected, consent language, promise accuracy</li>
+        <li><b>Regulatory links</b> — Form ADV Part 2A/2B, Form CRS, IAPD firm summary</li>
+        <li><b>Supporting files</b> — <code>robots.txt</code>, <code>sitemap.xml</code>, <code>llms.txt</code>, JSON-LD / schema.org identity fields</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Standards applied</h3>
+      <ul>
+        <li><b>Advisers Act Rule 206(4)-1</b> — fair and balanced advertising; no untrue or misleading statements; substantiation of material claims</li>
+        <li><b>Form ADV / Form CRS consistency</b> — website statements reconcilable to current filings</li>
+        <li><b>UPL / scope-of-practice</b> — clear that the firm and featured IAR do not practice law</li>
+        <li><b>CFP Board mark usage</b> — certification-mark attribution present</li>
+        <li><b>Privacy / truthful data practices</b> — privacy policy matches actual form behavior</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow green">03 · Compliance checklist</p>
+      <h2>Checks performed and results</h2>
+      <p>Each control was reviewed against the live site content and the firm’s current SEC filings.</p>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th class="check-col">Check</th>
+          <th>What we verified</th>
+          <th class="result-col">Result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><b>Adviser identity</b></td>
+          <td>Site identifies Marino, Stram &amp; Associates, LLC d/b/a MSA Financial (CRD #107768). Office addresses and phone numbers match approved public materials.</td>
+          <td class="status">Pass</td>
+        </tr>
+        <tr>
+          <td><b>Form ADV access</b></td>
+          <td>The deployed footer links directly to the Form ADV Part 2A/2B brochure on SEC IAPD.</td>
+          <td class="status">Pass</td>
+        </tr>
+        <tr>
+          <td><b>Form CRS access</b></td>
+          <td>The deployed footer links directly to Form CRS (<code>crs_107768.pdf</code>).</td>
+          <td class="status">Pass</td>
+        </tr>
+        <tr>
+          <td><b>IAPD verification</b></td>
+          <td>SEC IAPD firm summary link present and live for CRD #107768.</td>
+          <td class="status">Pass</td>
+        </tr>
+        <tr>
+          <td><b>SEC registration caveat</b></td>
+          <td>The deployed footer states that registration with the SEC does not imply a certain level of skill or training.</td>
+          <td class="status">Pass</td>
+        </tr>
+        <tr>
+          <td><b>Educational / not advice</b></td>
+          <td>Homepage, calculator, guide, booking fine print, and footers use educational framing and state that content is not legal, tax, or investment advice or a solicitation to buy or sell securities.</td>
+          <td class="status">Pass</td>
+        </tr>
+        <tr>
+          <td><b>Professional boundaries / no UPL</b></td>
+          <td>PR #1 strengthened the homepage, guide, compact footer, and full footer to state that Michael Cammarata is not an attorney or CPA, does not draft legal documents or prepare tax returns, and coordinates with independently engaged professionals.</td>
+          <td class="status">Pass</td>
+        </tr>
+        <tr>
+          <td><b>Compensation &amp; conflicts</b></td>
+          <td>Website Disclosures and the sitewide footer address advisory compensation and note that certain Advisory Persons may receive insurance commissions if products are implemented outside the advisory relationship, consistent with Form ADV / Form CRS. Clients are not obligated to purchase insurance.</td>
+          <td class="status">Pass</td>
+        </tr>
+        <tr>
+          <td><b>AUM claim substantiation</b></td>
+          <td>AUM is presented as approximately $1.4B as of December 31, 2025, consistent with Form ADV Item 4.E ($1,405,327,219).</td>
+          <td class="status">Pass</td>
+        </tr>
+        <tr>
+          <td><b>Testimonials / endorsements</b></td>
+          <td>No third-party client testimonials, ratings, or performance endorsements. One first-person quote is attributed to Michael Cammarata (not a client testimonial).</td>
+          <td class="status">Pass</td>
+        </tr>
+        <tr>
+          <td><b>Performance advertising</b></td>
+          <td>No investment performance track records, GIPS composites, or guaranteed-return claims. Tax and planning illustrations are labeled educational / illustrative with variability language.</td>
+          <td class="status">Pass</td>
+        </tr>
+        <tr>
+          <td><b>Calculator / tax illustrations</b></td>
+          <td>Calculator discloses M.G.L. c. 65C methodology, 2026 assumptions, illustrative A/B scenario, and “not tax or legal advice.” Homepage and guide examples use illustrative language and variability caveats.</td>
+          <td class="status">Pass</td>
+        </tr>
+        <tr>
+          <td><b>Complimentary review offer</b></td>
+          <td>The homepage describes a no-cost, no-obligation educational conversation and states that it is not investment advice or a solicitation to buy or sell securities.</td>
+          <td class="status">Pass</td>
+        </tr>
+        <tr>
+          <td><b>Privacy vs. actual forms</b></td>
+          <td>Privacy Policy describes the complimentary-review form fields collected. Guides and calculator are available without an email wall. Policy states information is not sold.</td>
+          <td class="status">Pass</td>
+        </tr>
+        <tr>
+          <td><b>Lead-form truthfulness</b></td>
+          <td>Form does not promise an unfulfillable download. Consent language discloses contact by MSA Financial, and a phone number is provided as a backup contact path during CRM integration.</td>
+          <td class="status">Pass</td>
+        </tr>
+        <tr>
+          <td><b>CFP® mark attribution</b></td>
+          <td>Website Disclosures include CFP Board ownership / certification-mark language for CERTIFIED FINANCIAL PLANNER® and CFP®.</td>
+          <td class="status">Pass</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow green">04 · Additional controls observed</p>
+      <h2>Post-merge improvements retained</h2>
+    </div>
+    <div class="card">
+      <ul>
+        <li><b>Expanded biography</b> — fuller practice positioning with explicit coordination boundaries</li>
+        <li><b>Official identity assets</b> — Michael’s headshot and the MSA Financial logo replace placeholders</li>
+        <li><b>Attorney / CPA scope language</b> — now repeated across homepage, guide, and both footer variants</li>
+        <li><b>Contact consistency</b> — one main-office receptionist number is presented across the three office references</li>
+        <li><b>Structured identity</b> — organization, person, office, and SEC IAPD references are more complete</li>
+        <li><b>No client testimonials</b> — the deployed pages do not use third-party reviews or client endorsements</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow green">05 · Filing references</p>
+      <h2>Sources relied upon</h2>
+    </div>
+    <div class="card">
+      <ul>
+        <li><b>Form ADV Part 2A</b> — firm identity, AUM as of December 31, 2025, advisory services and fees</li>
+        <li><b>Form ADV Part 2B (Cammarata)</b> — credentials, other business activities, supervision</li>
+        <li><b>Form CRS</b> — relationships and services; fees; conflicts including insurance commissions</li>
+        <li><b>SEC IAPD</b> — firm summary CRD #107768</li>
+        <li><b>Post-merge deployment</b> — Vercel production build for commit <code>e0e611a</code>, completed July 31, 2026</li>
+        <li><b>PR #1 record</b> — “Update Michael bio, branding, and contact details,” merged July 31, 2026</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow green">06 · Ongoing maintenance</p>
+      <h2>Recommended monitoring (post-approval)</h2>
+      <p>These are standard ongoing hygiene items, not open defects.</p>
+    </div>
+    <div class="card">
+      <ul>
+        <li><b>ADV / CRS links</b> — when the firm files an updated brochure or CRS, confirm website links still point to the current SEC versions</li>
+        <li><b>Tax-law figures</b> — review Massachusetts estate tax / surtax numbers when statutes or thresholds change</li>
+        <li><b>Brand and biography</b> — update credentials, role, contact details, and identity assets when firm-approved materials change</li>
+        <li><b>Books and records</b> — retain this signed memo and dated copies of approved pages per the firm’s Marketing Rule recordkeeping procedures</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow green">07 · CCO approval</p>
+      <h2>Sign-off</h2>
+      <p>
+        By signing below, the Chief Compliance Officer (or designee) confirms that the
+        Preserve My Estate website marketing, as reviewed in this memorandum, is approved for
+        public use under the firm’s advertising and marketing policies.
+      </p>
+    </div>
+
+    <div class="signoff">
+      <h3>Approval to publish / continue publishing</h3>
+      <p>
+        Intended site: <b>preservemyestate.com</b> · Review package date: <b>July 31, 2026</b> ·
+        Adviser: <b>Marino, Stram &amp; Associates, LLC d/b/a MSA Financial (CRD #107768)</b>
+      </p>
+
+      <div class="sign-grid">
+        <div class="sign-block">
+          <div class="label">Chief Compliance Officer</div>
+          <div class="line"></div>
+          <div class="hint">Signature</div>
+          <div class="line spaced"></div>
+          <div class="hint">Printed name · Title</div>
+          <div class="line spaced"></div>
+          <div class="hint">Date</div>
+        </div>
+        <div class="sign-block">
+          <div class="label">Business owner (optional)</div>
+          <div class="line"></div>
+          <div class="hint">Signature</div>
+          <div class="line spaced"></div>
+          <div class="hint">Printed name · Title</div>
+          <div class="line spaced"></div>
+          <div class="hint">Date</div>
+        </div>
+      </div>
+
+      <div class="notes">
+        <p class="notes-label">
+          Approval conditions / notes (optional):
+        </p>
+        <div class="notes-box"></div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <b class="label">Suggested retention</b>
+      Keep a PDF of this signed memo, a dated export or screenshots of the approved pages, and
+      copies of the Form ADV / Form CRS versions relied upon, in the firm’s marketing
+      advertising file.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <img src="assets/wr-lockup-dark.png" alt="WealthReach">
+    <p>
+      © 2026 WealthReach Inc. · Prepared for Marino, Stram &amp; Associates, LLC d/b/a MSA Financial
+      · Post-merge review of deployment <code>e0e611a</code> · This document is a compliance
+      packaging aid for the firm’s CCO and is not a legal opinion.
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>

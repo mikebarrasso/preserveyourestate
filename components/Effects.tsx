@@ -28,6 +28,28 @@ export default function Effects() {
       .querySelectorAll(".reveal, .reveal-scale, .stagger, .process-grid, .chart")
       .forEach((el) => io.observe(el));
 
+    /* Auto-reveal long-form content (guide articles, inner-page bodies).
+       Only tags elements still below the fold so nothing visible ever flashes,
+       and skips anything already carrying a reveal class. */
+    if (!reduced) {
+      document
+        .querySelectorAll<HTMLElement>(
+          ".article > h2, .article > h3, .article > p, .article > ul, .article > ol, .article > .table-scroll, .article > .callout, .article > .byline-card, .article > div"
+        )
+        .forEach((el) => {
+          if (
+            el.classList.contains("reveal") ||
+            el.classList.contains("reveal-scale") ||
+            el.classList.contains("auto-reveal")
+          )
+            return;
+          if (el.getBoundingClientRect().top > window.innerHeight * 0.9) {
+            el.classList.add("auto-reveal");
+            io.observe(el);
+          }
+        });
+    }
+
     document.querySelectorAll(".stagger").forEach((group) => {
       Array.from(group.children).forEach((child, i) =>
         (child as HTMLElement).style.setProperty("--i", String(i))

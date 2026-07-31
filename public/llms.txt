@@ -1,25 +1,41 @@
-# PreserveYourEstate.com
+# Preserve My Estate (MSA Financial)
 
-> Massachusetts estate & tax-focused wealth management. Michael Cammarata, CFP®,
-> Managing Partner at MSA Financial, LLC (SEC-registered RIA, CRD #107768, ~$1.5B AUM,
-> est. 1997). Offices: Braintree, Sandwich, and Framingham, MA. Educational content on
-> the Massachusetts estate tax (M.G.L. c. 65C), credit shelter / A/B trust coordination,
-> trust funding, and Roth conversion planning for households with $2M+ in investable
-> assets. Not a law firm; no legal or tax advice.
+> Fiduciary wealth, estate, and tax planning for Massachusetts families.
+> Preserve My Estate is the educational site of Marino, Stram & Associates, LLC d/b/a MSA
+> Financial — an SEC-registered investment adviser (CRD #107768, est. 1997, ~$1.4B AUM as of
+> Dec. 31, 2025). Led by Michael Cammarata, CFP®, Managing Partner. Focus: Massachusetts
+> estate tax (M.G.L. c. 65C), A/B / credit shelter trust coordination, trust funding, and Roth
+> conversion planning for households with roughly $2M+ in investable assets. Independent RIA;
+> not a law firm; content is educational, not legal or tax advice.
+
+## Offices
+- Braintree (HQ): 25 Braintree Hill Park, Suite 303, Braintree, MA 02184 · (781) 843-3500
+- Sandwich: 90 Route 6A, Unit 4A, Sandwich, MA 02563 · (508) 833-9555
+- Framingham: By appointment, Framingham, MA 01701 · (508) 879-1188
 
 ## Key facts (2026)
 - Massachusetts taxes estates over $2 million; graduated rates up to 16% after a $99,600 credit
-- Massachusetts has no spousal portability; A/B trust planning preserves both $2M exemptions (~$4M shielded per couple)
+- Massachusetts has no spousal portability; A/B trust planning can preserve both $2M exemptions
 - Illustrative MA estate tax before planning: $2.5M → ~$39,200 · $3M → ~$82,400 · $4M → ~$180,800 · $6M → ~$411,200
 - MA Millionaire Surtax: 4% on income above $1,107,750 (2026)
 
-## Key pages
+## Pages
 - [Home](https://preserveyourestate.com/)
-- [Massachusetts Estate Tax Calculator](https://preserveyourestate.com/calculator/)
-- [A/B Trust & Marital Deduction Trust Guide](https://preserveyourestate.com/guides/ab-trust/)
-- [Trust Funding & Asset Titling Guide](https://preserveyourestate.com/guides/trust-funding/)
-- [Roth Conversion Window Guide](https://preserveyourestate.com/guides/roth-conversion/)
-- [Schedule a Complimentary Review](https://preserveyourestate.com/#booking)
+- [About Michael Cammarata, CFP®](https://preserveyourestate.com/about)
+- [Massachusetts Estate Tax Calculator](https://preserveyourestate.com/calculator)
+- [Guides hub](https://preserveyourestate.com/guides)
+- [Massachusetts Estate Tax Guide (pillar)](https://preserveyourestate.com/guides/massachusetts-estate-tax)
+- [Federal vs Massachusetts Estate Tax](https://preserveyourestate.com/guides/federal-vs-massachusetts-estate-tax)
+- [Massachusetts Estate Tax Portability](https://preserveyourestate.com/guides/massachusetts-estate-tax-portability)
+- [A/B Trust Guide](https://preserveyourestate.com/guides/ab-trust)
+- [Trust Funding Guide](https://preserveyourestate.com/guides/trust-funding)
+- [Roth Conversion Guide](https://preserveyourestate.com/guides/roth-conversion)
+- [Millionaire Surtax Guide](https://preserveyourestate.com/guides/massachusetts-millionaire-surtax)
+- [Locations hub](https://preserveyourestate.com/locations)
+- [Braintree](https://preserveyourestate.com/locations/braintree) · [Sandwich](https://preserveyourestate.com/locations/sandwich) · [Framingham](https://preserveyourestate.com/locations/framingham)
+- [South Shore](https://preserveyourestate.com/locations/south-shore) · [Cape Cod](https://preserveyourestate.com/locations/cape-cod) · [MetroWest](https://preserveyourestate.com/locations/metrowest)
+- [Privacy](https://preserveyourestate.com/privacy) · [Disclosures](https://preserveyourestate.com/disclosures) · [Terms](https://preserveyourestate.com/terms)
 
 ## Verification
 - SEC IAPD: https://adviserinfo.sec.gov/firm/summary/107768
+- LinkedIn: https://www.linkedin.com/in/michael-cammarata-cfp

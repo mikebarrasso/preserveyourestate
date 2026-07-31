@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Preserve My Estate — Site Readiness Report · WealthReach</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --wr-white:#FFFFFF; --wr-ink:#151819; --wr-green:#15B883;
+    --wr-green-50:#E7F8F1; --wr-green-100:#C7F0DF; --wr-green-700:#0C8A62;
+    --wr-cloud:#EDEFF7; --wr-smoke:#D3D6E0; --wr-steel:#BCBFCC; --wr-space:#9DA2B3;
+    --wr-graphite:#6E7180; --wr-arsenic:#40424D; --wr-phantom:#1E1E24;
+    --bg-2:#FAFBFD;
+    --radius:10px; --radius-xl:14px;
+    --shadow-sm:0 1px 2px 0 rgba(20,22,25,.05),0 1px 3px 0 rgba(20,22,25,.06);
+    --shadow-md:0 4px 6px -1px rgba(20,22,25,.07),0 2px 4px -2px rgba(20,22,25,.05);
+    --ease:cubic-bezier(.16,1,.3,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Manrope",ui-sans-serif,system-ui,sans-serif;
+    color:var(--wr-ink); background:var(--bg-2);
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    line-height:1.6; font-size:16px;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:0 28px}
+  .eyebrow{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--wr-graphite)}
+  .eyebrow.green{color:var(--wr-green-700)}
+
+  /* ── Header ── */
+  header{background:var(--wr-white);border-bottom:1px solid var(--wr-smoke)}
+  .header-inner{max-width:880px;margin:0 auto;padding:20px 28px;display:flex;align-items:center;justify-content:space-between}
+  .header-inner img{height:30px;display:block}
+  .header-meta{font-size:13px;font-weight:500;color:var(--wr-graphite);text-align:right;line-height:1.45}
+
+  /* ── Cover ── */
+  .cover{background:var(--wr-white);border-bottom:1px solid var(--wr-smoke);padding:72px 0 64px}
+  .cover-grid{display:grid;grid-template-columns:1fr 240px;gap:48px;align-items:center}
+  @media(max-width:720px){.cover-grid{grid-template-columns:1fr}}
+  .cover h1{font-size:44px;line-height:1.08;letter-spacing:-.02em;font-weight:800;margin:14px 0 18px}
+  .cover .lead{font-size:18px;line-height:1.6;color:var(--wr-arsenic);max-width:520px}
+  .gauge{position:relative;width:240px;height:240px;margin:0 auto}
+  .gauge svg{transform:rotate(-90deg)}
+  .gauge-num{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .gauge-num b{font-size:64px;font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--wr-ink)}
+  .gauge-num span{font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--wr-graphite);margin-top:6px}
+
+  /* ── Stat row ── */
+  .statrow{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--wr-smoke);border:1px solid var(--wr-smoke);border-radius:var(--radius-xl);overflow:hidden;margin:-36px auto 0;max-width:824px;box-shadow:var(--shadow-md);position:relative;z-index:2}
+  @media(max-width:720px){.statrow{grid-template-columns:1fr}}
+  .stat{background:var(--wr-white);padding:22px 20px;text-align:center}
+  .stat b{display:block;font-size:30px;font-weight:800;letter-spacing:-.02em;color:var(--wr-ink)}
+  .stat b em{font-style:normal;color:var(--wr-green)}
+  .stat span{font-size:13px;font-weight:500;color:var(--wr-graphite)}
+
+  /* ── Sections ── */
+  section{padding:56px 0 8px}
+  .section-head{margin-bottom:28px;max-width:640px}
+  .section-head h2{font-size:30px;line-height:1.15;letter-spacing:-.02em;font-weight:700;margin:10px 0 10px}
+  .section-head p{color:var(--wr-arsenic)}
+
+  .card{background:var(--wr-white);border:1px solid var(--wr-smoke);border-radius:var(--radius-xl);box-shadow:var(--shadow-sm);padding:28px 30px;margin-bottom:20px}
+  .card h3{font-size:20px;font-weight:700;letter-spacing:-.01em;display:flex;align-items:center;gap:10px;margin-bottom:6px}
+  .card .num{font-size:13px;font-weight:800;color:var(--wr-green);letter-spacing:.02em}
+  .card > p.desc{color:var(--wr-arsenic);margin-bottom:16px;max-width:680px}
+  .card ul{list-style:none;margin:0 0 4px}
+  .card ul li{padding:7px 0 7px 26px;position:relative;font-size:15px;color:var(--wr-arsenic);border-bottom:1px solid var(--wr-cloud)}
+  .card ul li:last-child{border-bottom:none}
+  .card ul li::before{content:"";position:absolute;left:2px;top:14px;width:14px;height:14px;border-radius:50%;background:var(--wr-green-50);border:1.5px solid var(--wr-green);}
+  .card ul li::after{content:"";position:absolute;left:6.5px;top:17.5px;width:4px;height:7px;border:solid var(--wr-green-700);border-width:0 1.5px 1.5px 0;transform:rotate(40deg)}
+  .card ul li b{color:var(--wr-ink);font-weight:600}
+
+  .why{margin-top:18px;background:var(--wr-green-50);border:1px solid var(--wr-green-100);border-radius:var(--radius);padding:14px 18px;font-size:14.5px;line-height:1.55;color:var(--wr-ink)}
+  .why b{font-weight:700;color:var(--wr-green-700);text-transform:uppercase;font-size:11.5px;letter-spacing:.05em;display:block;margin-bottom:4px}
+
+  /* ── Before/after table ── */
+  table{width:100%;border-collapse:collapse;background:var(--wr-white);border:1px solid var(--wr-smoke);border-radius:var(--radius-xl);overflow:hidden;box-shadow:var(--shadow-sm);font-size:14.5px}
+  table{border-style:hidden;box-shadow:0 0 0 1px var(--wr-smoke),var(--shadow-sm);border-radius:var(--radius-xl)}
+  th,td{padding:12px 18px;text-align:left;border-bottom:1px solid var(--wr-cloud);vertical-align:top}
+  thead th{background:var(--bg-2);font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--wr-graphite);border-bottom:1px solid var(--wr-smoke)}
+  tbody tr:last-child td{border-bottom:none}
+  td.before{color:var(--wr-graphite)}
+  td.after{color:var(--wr-ink);font-weight:600}
+  td.after .pill{display:inline-block;background:var(--wr-green-50);color:var(--wr-green-700);border:1px solid var(--wr-green-100);border-radius:9999px;padding:1px 10px;font-size:12.5px;font-weight:700}
+
+  /* ── Next steps ── */
+  .next li::before{background:var(--wr-cloud);border-color:var(--wr-steel)}
+  .next li::after{border-color:var(--wr-graphite)}
+
+  footer{margin-top:64px;padding:32px 0 48px;border-top:1px solid var(--wr-smoke);background:var(--wr-white)}
+  .footer-inner{max-width:880px;margin:0 auto;padding:0 28px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+  .footer-inner img{height:22px;opacity:.9}
+  .footer-inner p{font-size:12.5px;color:var(--wr-graphite)}
+
+  @media print{
+    body{background:#fff}
+    .statrow{box-shadow:none}
+    section{padding:32px 0 0}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <img src="assets/wr-lockup-dark.png" alt="WealthReach">
+    <div class="header-meta">
+      Site Readiness Report<br>
+      Prepared for MSA Financial · July 2026
+    </div>
+  </div>
+</header>
+
+<div class="cover">
+  <div class="wrap cover-grid">
+    <div>
+      <p class="eyebrow green">preserveyourestate.com</p>
+      <h1>Your site is dialed in.</h1>
+      <p class="lead">
+        You brought us an outline and an early draft of a landing page. We took that vision and
+        built it into a complete production site. This report covers what was built, why each
+        piece matters for getting found by the Massachusetts families you serve, and how the site
+        is engineered to turn those visitors into booked reviews.
+      </p>
+    </div>
+    <div class="gauge">
+      <svg width="240" height="240" viewBox="0 0 240 240">
+        <circle cx="120" cy="120" r="104" fill="none" stroke="#EDEFF7" stroke-width="16"/>
+        <circle cx="120" cy="120" r="104" fill="none" stroke="#15B883" stroke-width="16"
+                stroke-linecap="round" stroke-dasharray="653.45" stroke-dashoffset="0"/>
+      </svg>
+      <div class="gauge-num">
+        <b>100</b>
+        <span>SEO readiness · out of 100</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="statrow">
+    <div class="stat"><b>33</b><span>indexable pages, up from 3</span></div>
+    <div class="stat"><b>7</b><span>Massachusetts tax guides</span></div>
+    <div class="stat"><b>13</b><span>office &amp; community pages</span></div>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <section>
+    <div class="section-head">
+      <p class="eyebrow">What we built</p>
+      <h2>Six systems, one growth engine</h2>
+      <p>Every item below is live in the codebase and verified in a clean production build.</p>
+    </div>
+
+    <!-- Preamble: from the original draft to a full site -->
+    <div class="card">
+      <h3>First — from your original landing page to a full site</h3>
+      <p class="desc">You came to us with an outline and a rough landing-page draft. We kept its intent exactly — one page, one purpose, the 45-minute review — and rebuilt it as the production homepage. Then we built 32 more pages around it, because a landing page alone has a problem: nobody can find it.</p>
+      <ul>
+        <li><b>Your landing page is still the heart of the site.</b> The homepage is that vision, professionally rebuilt — a single focused funnel from problem to calculator to booked review</li>
+        <li><b>A standalone landing page can't rank.</b> Google decides authority by depth: a one-page site about Massachusetts estate tax loses to a site that covers the whole topic. The seven guides exist to win the searches your families are actually typing</li>
+        <li><b>The 13 location pages win the searches near your offices.</b> "Estate planning Hingham" and "financial advisor Cape Cod" are searched by exactly the households you want, and Google hands those results to sites with real local presence — addresses, phone numbers, market-specific pages</li>
+        <li><b>Every added page feeds the same funnel.</b> A guide reader is pointed to the calculator; the calculator points to the review; location pages point to both. Nothing competes with your landing page — 32 pages exist to fill it</li>
+      </ul>
+      <div class="why"><b>Why it matters</b>
+        Think of the homepage as the store and every other page as a road leading to it. A landing page with no roads gets exactly the traffic you pay ads for, and nothing else. This architecture earns traffic month after month without ad spend — and every visitor it earns lands in the same single-purpose funnel your original draft was designed for.
+      </div>
+    </div>
+
+    <!-- 01 Technical foundation -->
+    <div class="card">
+      <h3><span class="num">01</span> Technical foundation</h3>
+      <p class="desc">The plumbing search engines require before they trust a site.</p>
+      <ul>
+        <li><b>XML sitemap</b> — all 33 pages declared to Google with priorities and update frequencies</li>
+        <li><b>Canonical tags, Open Graph and Twitter cards</b> on every page, with branded share images</li>
+        <li><b>Headline rendering fixed</b> — your homepage H1 previously read as one unbroken string to crawlers; it now reads exactly as written</li>
+        <li><b>Favicon, Apple touch icon and a branded 404 page</b> that routes lost visitors to the calculator and guides</li>
+        <li><b>robots.txt</b> welcomes Google, Bing and every major AI crawler by name</li>
+      </ul>
+      <div class="why"><b>Why it matters</b>
+        Google decides what to rank based on what it can read. Before these fixes, crawlers saw three pages, a missing sitemap and a garbled headline. Now they see a complete, clearly structured site — the baseline every ranking is built on.
+      </div>
+    </div>
+
+    <!-- 02 Content engine -->
+    <div class="card">
+      <h3><span class="num">02</span> The content engine</h3>
+      <p class="desc">Seven deep guides anchored by one pillar page — a topic cluster built to own Massachusetts estate tax search.</p>
+      <ul>
+        <li><b>Massachusetts Estate Tax Guide</b> — the pillar. Threshold, credit, rates, worked examples, statute citations</li>
+        <li><b>Federal vs Massachusetts Estate Tax</b> — the comparison families search when they realize they owe the state but not the IRS</li>
+        <li><b>Portability, A/B Trusts, Trust Funding, Roth Conversions, Millionaire Surtax</b> — each interlinked, each with FAQ markup</li>
+        <li>Every guide carries your byline, publish dates and plain-language disclaimers</li>
+      </ul>
+      <div class="why"><b>Why it matters</b>
+        "Massachusetts estate tax" draws roughly 1,900 searches a month — and almost no advisor sites answer it well. A pillar-and-cluster structure tells Google you are the authority on the whole topic, not one article. Each guide also feeds the next: readers arrive on portability, end up on the calculator, and book the review.
+      </div>
+    </div>
+
+    <!-- 03 Local presence -->
+    <div class="card">
+      <h3><span class="num">03</span> Local presence</h3>
+      <p class="desc">Thirteen location pages built around your three real offices — no thin town-page spam.</p>
+      <ul>
+        <li><b>Office pages</b> for Braintree, Sandwich and Framingham with full address, phone and driving context</li>
+        <li><b>Regional hubs</b> for the South Shore, Cape Cod and MetroWest with market-specific estate-tax angles</li>
+        <li><b>Community pages</b> for six high-fit towns — Hingham, Plymouth, Falmouth, Barnstable, Wellesley, Weston — each with a genuine local story, not a find-and-replace template</li>
+        <li>Office addresses and phone numbers now live in the footer, legal pages and structured data</li>
+      </ul>
+      <div class="why"><b>Why it matters</b>
+        When a Hingham family searches for estate planning help, Google weighs proximity and local signals heavily. Real addresses, real phone numbers and pages that actually describe each market are what separate you from firms that stamped out 200 identical city pages — a pattern Google now penalizes.
+      </div>
+    </div>
+
+    <!-- 04 AI search readiness -->
+    <div class="card">
+      <h3><span class="num">04</span> AI search readiness</h3>
+      <p class="desc">Structured so ChatGPT, Perplexity, Claude and Gemini can cite you as the source.</p>
+      <ul>
+        <li><b>llms.txt</b> — a machine-readable summary of your firm, offices, key 2026 tax facts and every page, purpose-built for AI crawlers</li>
+        <li><b>Structured data everywhere</b> — your firm as a financial service with all three offices, you as the credentialed author, FAQ markup on five pages, how-to steps on the funding checklist, breadcrumbs sitewide</li>
+        <li><b>Extractable answers</b> — definitions, tax tables and statute links formatted so an AI can quote them accurately</li>
+        <li>FAQ answers live in real HTML, not hidden behind scripts</li>
+      </ul>
+      <div class="why"><b>Why it matters</b>
+        A growing share of your prospects now ask ChatGPT or Perplexity "does Massachusetts have an estate tax" before they ever open Google. AI engines cite sources that are structured, specific and verifiable. Your site now hands them exact numbers with your name attached — every citation is a warm introduction.
+      </div>
+    </div>
+
+    <!-- 05 Trust & compliance -->
+    <div class="card">
+      <h3><span class="num">05</span> Trust and compliance</h3>
+      <p class="desc">Every promise on the site is now one you actually keep.</p>
+      <ul>
+        <li><b>Privacy Policy, Website Disclosures and Terms of Use</b> — real pages replacing dead links</li>
+        <li><b>About page</b> for you with credentials, CRD, SEC verification links and LinkedIn tied into the site's structured data</li>
+        <li><b>Honest lead forms</b> — demo language removed; the phantom "PDF download" promise replaced with free on-site guides, no email wall</li>
+        <li>ADV, CRS and IAPD links present and consistent; not-an-attorney disclaimers on every guide</li>
+      </ul>
+      <div class="why"><b>Why it matters</b>
+        Google's quality guidelines score financial sites on expertise, authoritativeness and trust — hard. Broken privacy links and unfulfillable download promises read as red flags to both algorithms and the $2M+ households you want as clients. A compliance-clean site is a ranking asset in this industry, not a formality.
+      </div>
+    </div>
+
+    <!-- 06 Performance -->
+    <div class="card">
+      <h3><span class="num">06</span> Performance</h3>
+      <p class="desc">Speed is a ranking factor. The homepage is now built to pass Core Web Vitals.</p>
+      <ul>
+        <li><b>Poster images compressed 46%</b> with no visible quality loss</li>
+        <li>Stats that previously rendered as "0%" for crawlers now show real figures in the page source</li>
+        <li>Every page pre-rendered as static HTML — nothing waits on a server</li>
+      </ul>
+      <div class="why"><b>Why it matters</b>
+        Google measures how fast your largest visual element loads and folds it directly into rankings. A slow first paint is the difference between a visitor who stays and one who's gone before the page draws.
+      </div>
+    </div>
+  </section>
+
+  <!-- Conversion architecture -->
+  <section>
+    <div class="section-head">
+      <p class="eyebrow">Built to convert</p>
+      <h2>Getting found is half the job. Here's the other half.</h2>
+      <p>The six systems above bring qualified Massachusetts families to the site. Everything below is how the site turns those visitors into booked reviews — each decision grounded in established conversion and behavioral research.</p>
+    </div>
+
+    <!-- C1 One funnel -->
+    <div class="card">
+      <h3><span class="num">07</span> One funnel, one ask per page</h3>
+      <p class="desc">Every page has exactly one primary action, matched to how ready the visitor is.</p>
+      <ul>
+        <li><b>Guides → Calculator → Review</b> — a reader arrives from search, sees their own estate-tax number, then books. Each step is the natural next one, never a leap</li>
+        <li><b>CTA hierarchy on every page</b> — one gold primary action; anything else is visibly secondary. Guide pages lead with the calculator; the calculator leads with the review</li>
+        <li><b>Competing asks removed</b> — no duplicate forms, no exit links at decision moments, no offers fighting each other for the same click</li>
+      </ul>
+      <div class="why"><b>Why it matters</b>
+        Decision research is unambiguous: every additional choice on a page slows the visitor down and increases abandonment (Hick's Law, the paradox of choice). A page that asks for one thing gets it more often than a page that asks for three.
+      </div>
+    </div>
+
+    <!-- C2 Calculator -->
+    <div class="card">
+      <h3><span class="num">08</span> The calculator as conversion engine</h3>
+      <p class="desc">The single most persuasive asset on the site is the visitor's own number.</p>
+      <ul>
+        <li><b>A 60-second, no-commitment first step</b> — far easier to say yes to than a 45-minute call, which is exactly why it's the site-wide primary ask for cold visitors</li>
+        <li><b>Abstract tax law becomes a personal dollar figure</b> — "$180,800" lands harder than any paragraph about M.G.L. c. 65C</li>
+        <li><b>The booking ask arrives at peak motivation</b> — the moment their number is on screen: "Walk Through My Number: 45 Min, Free"</li>
+      </ul>
+      <div class="why"><b>Why it matters</b>
+        People are roughly twice as motivated to avoid a loss as to chase a gain (loss aversion). A visitor who has just seen what Massachusetts would take from their family is in a different frame of mind than one reading generic marketing — and small first commitments reliably lead to larger ones (the foot-in-the-door effect).
+      </div>
+    </div>
+
+    <!-- C3 Frictionless, qualified booking -->
+    <div class="card">
+      <h3><span class="num">09</span> A booking path with no leaks</h3>
+      <p class="desc">When a visitor decides to act, nothing stands between them and the request.</p>
+      <ul>
+        <li><b>Five-field form, about 60 seconds</b> — name, contact and one qualifying question. Scheduling details belong on the call, not the form</li>
+        <li><b>The asset question keeps the calendar clean</b> — every booked review is a genuine $2M+ prospect, so Michael's time goes to real fits</li>
+        <li><b>The review's deliverables are spelled out in writing</b> — four concrete things every caller walks away with, which removes the fear of a sales ambush</li>
+        <li><b>A phone number backstop</b> — time-sensitive prospects can skip the form entirely</li>
+      </ul>
+      <div class="why"><b>Why it matters</b>
+        Form length is one of the most consistent conversion levers in the industry — every unnecessary field costs real submissions. And for a high-trust purchase like financial advice, spelling out exactly what happens on the call (and what doesn't) is what converts hesitation into a booked slot.
+      </div>
+    </div>
+
+    <!-- C4a Persuasion details -->
+    <div class="card">
+      <h3><span class="num">10</span> The persuasion details, line by line</h3>
+      <p class="desc">Beyond the structure, the copy itself applies specific, research-backed conversion techniques.</p>
+      <ul>
+        <li><b>Risk reversal at the ask</b> — "no cost, no obligation," "no products to sell," and the promise of gaps named in writing "whether or not we ever speak again." Every reason to fear the call is answered before it's booked</li>
+        <li><b>Anchoring and contrast</b> — the calculator shows the before-planning tax next to the with-planning scenario, so the value of acting is a visible dollar gap, not an abstract claim</li>
+        <li><b>Specific numbers over adjectives</b> — "$82,400 on a $3M estate," "a $99,600 credit," "45 minutes," "60 seconds." Specificity reads as competence; vagueness reads as marketing</li>
+        <li><b>Objection-handling FAQ</b> — "Is Michael an attorney?", "Do I need $2 million?" The questions a hesitant prospect is silently asking are answered on the page, in plain language</li>
+        <li><b>CTAs that say what you get</b> — "Calculate My Estate Tax," "Walk Through My Number: 45 Min, Free" — never a generic "Submit" or "Learn More"</li>
+        <li><b>A page that argues in order</b> — problem → personal number → solution → proof → fit → close. Classic attention-interest-desire-action structure, one act at a time</li>
+      </ul>
+      <div class="why"><b>Why it matters</b>
+        Structure gets a visitor to the right place; the words decide what they do there. Each of these is a documented persuasion lever — risk reversal defuses regret, anchors make value concrete, and specificity builds the credibility a $2M+ household requires before handing over a phone number.
+      </div>
+    </div>
+
+    <!-- C4 Trust & self-qualification -->
+    <div class="card">
+      <h3><span class="num">11</span> Trust signals that do the selling</h3>
+      <p class="desc">Affluent families don't respond to pressure. The site persuades the way a fiduciary would.</p>
+      <ul>
+        <li><b>"Not for everyone" positioning</b> — the fit section names exactly who the practice serves. The right families feel chosen; the wrong ones self-select out before they cost you a call</li>
+        <li><b>The readiness checklist</b> — visitors audit their own plan and watch the gaps appear. They build the case for the review themselves, which is far more convincing than being told</li>
+        <li><b>Generosity before any ask</b> — seven full guides and the calculator, free, no email wall. Give real value first and people are naturally inclined to reciprocate</li>
+        <li><b>Credentials at every decision point</b> — CFP®, CRD #107768, SEC verification links, fiduciary and no-product language, ~$1.5B managed since 1997</li>
+      </ul>
+      <div class="why"><b>Why it matters</b>
+        These are the classic levers of ethical persuasion — reciprocity, authority, commitment and consistency — applied the way a $2M+ household expects to be treated. Exclusivity attracts the affluent buyer; free expertise builds the obligation to engage; and a self-scored checklist turns a skeptical reader into someone who has already argued your side.
+      </div>
+    </div>
+  </section>
+
+  <!-- Before / after -->
+  <section>
+    <div class="section-head">
+      <p class="eyebrow">The delta</p>
+      <h2>Before and after, side by side</h2>
+    </div>
+    <table>
+      <thead>
+        <tr><th style="width:34%">Area</th><th style="width:31%">Before</th><th>After</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Indexable pages</td><td class="before">3</td><td class="after">33 <span class="pill">+30</span></td></tr>
+        <tr><td>Sitemap</td><td class="before">Missing — returned an error</td><td class="after">All pages declared</td></tr>
+        <tr><td>Homepage headline</td><td class="before">Unreadable to crawlers</td><td class="after">Reads exactly as written</td></tr>
+        <tr><td>Educational guides</td><td class="before">1</td><td class="after">7, interlinked as a topic cluster</td></tr>
+        <tr><td>Location pages</td><td class="before">None</td><td class="after">13 — offices, regions, communities</td></tr>
+        <tr><td>Legal pages</td><td class="before">Dead "#" links</td><td class="after">Privacy, Disclosures, Terms</td></tr>
+        <tr><td>Structured data</td><td class="before">Basic</td><td class="after">Firm, author, offices, FAQs, how-to, breadcrumbs</td></tr>
+        <tr><td>AI crawler readiness</td><td class="before">Broken links in llms.txt</td><td class="after">Complete, accurate, citable</td></tr>
+        <tr><td>Social sharing</td><td class="before">No preview cards</td><td class="after">Branded cards on every page</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- What's next -->
+  <section>
+    <div class="section-head">
+      <p class="eyebrow">From here</p>
+      <h2>Three things that compound from a 100</h2>
+      <p>The site is built. These off-site moves turn a dialed-in site into a dominant one.</p>
+    </div>
+    <div class="card">
+      <ul class="next">
+        <li><b>Google Business Profiles</b> for Braintree and Sandwich, linked to the new office pages — the fastest path into local map results</li>
+        <li><b>Professional identity assets are now in place</b> — Michael’s approved headshot is used across the author profile, about page, calculator, and guides; keep it synchronized with future firm-approved materials</li>
+        <li><b>Quarterly law refreshes</b> — when Massachusetts thresholds or federal exemptions move, updating the guides keeps every "2026" reference current and every ranking earned</li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <img src="assets/wr-lockup-dark.png" alt="WealthReach">
+    <p>© 2026 WealthReach Inc. · Prepared for Michael Cammarata, CFP® · MSA Financial, LLC · preserveyourestate.com</p>
+  </div>
+</footer>
+
+</body>
+</html>

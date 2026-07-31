@@ -55,9 +55,6 @@ export default function CoordinationHub() {
             attorney and CPA stay yours; Michael makes the three plans agree.
           </motion.p>
           <motion.div variants={fadeUp} className="hub-actions">
-            <a className="btn btn-navy" href="#booking">
-              Schedule the 45-Minute Review <span className="arrow">→</span>
-            </a>
             <div className="hub-status">
               <span className="pulse-dot">
                 {!reduce && (

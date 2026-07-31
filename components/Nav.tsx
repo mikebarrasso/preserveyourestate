@@ -13,7 +13,7 @@ const ITEMS: Item[] = [
   { label: "The Problem", id: "problem" },
   { label: "How We Help", id: "coordination" },
   { label: "Guides", id: "guides" },
-  { label: "About", id: "about" },
+  { label: "About", href: "/about" },
   { label: "FAQ", id: "faq" },
 ];
 

@@ -3,6 +3,7 @@ import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import Hero from "@/components/Hero";
 import MsaLockup from "@/components/MsaLockup";
+import AuthorPortrait from "@/components/AuthorPortrait";
 import GapCard, { type Gap } from "@/components/GapCard";
 import CoordinationHub from "@/components/CoordinationHub";
 import TeaserCalc from "@/components/TeaserCalc";
@@ -17,7 +18,7 @@ const GAPS: Gap[] = [
       "Revocable trusts require assets to be retitled into the trust's name, but many families sign the documents and never finish the funding. The result: probate anyway, and the tax planning inside the trust never activates.", statBig: "#1", statNote:
       "Trust funding gaps are among the most frequently identified issues in Massachusetts estate plan reviews.", }, {
     num: "02", title: "No Massachusetts Portability", tease: "A surviving spouse cannot inherit your Massachusetts exemption.", impact:
-      "The federal exemption has been portable between spouses since 2010. Massachusetts has no portability: whatever exemption the first spouse doesn't use through planning is gone forever.", statBig: "$0", statNote: "Massachusetts portability benefit, unlike the $15M+ federal unified exemption.", }, {
+      "The federal exemption has been portable between spouses since 2010. Massachusetts has no portability: whatever exemption the first spouse doesn't use through planning is gone forever.", statBig: "$0", statNote: "Massachusetts portability benefit, unlike the $15,000,000 federal unified exclusion (2026).", }, {
     num: "03", title: "The RMD Timing Problem", tease: "Required Minimum Distributions can force income into the highest brackets at the worst time.", impact:
       "At 73, the IRS mandates IRA distributions whether you need the income or not, stacking on Social Security, pensions, and the Massachusetts surtax math.", statBig: "~$56,604", statNote: "Estimated first RMD on a $1.5M IRA at age 73 (IRS Uniform Lifetime Table).", }, {
     num: "04", title: "Massachusetts Estate Tax Exposure", tease: "The 2023 reform changed the structure, but not the exposure.", impact:
@@ -30,34 +31,154 @@ const GAPS: Gap[] = [
 
 const FAQ_TEXT: { q: string; a: string }[] = [
   {
-    q: "Does Massachusetts have an estate tax in 2026?", a: "Yes. Massachusetts taxes estates valued over $2 million, one of the lowest thresholds in the country. Rates are graduated up to 16%, applied after a $99,600 credit that shelters the first $2 million. Families who owe nothing federally may still owe six figures to Massachusetts. (M.G.L. c. 65C, 2026.)", }, {
-    q: "Can a married couple avoid the Massachusetts estate tax?", a: "Often, largely yes, with planning. Massachusetts has no portability, so a surviving spouse cannot inherit the deceased spouse's $2 million exemption. A credit shelter (A/B) trust preserves both exemptions, shielding roughly $4 million for a couple, but only if the trust is properly drafted and funded.", }, {
-    q: "Does life insurance count toward the Massachusetts estate tax?", a: "Generally yes, if you own the policy, death benefits are included in your taxable estate even though they pass income-tax-free to beneficiaries. An Irrevocable Life Insurance Trust (ILIT), properly structured and funded, can remove the proceeds from the estate.", }, {
-    q: "Is Michael an estate planning attorney?", a: "No. Michael Cammarata is a CERTIFIED FINANCIAL PLANNER® and Managing Partner at MSA Financial, LLC. He does not draft legal documents or provide legal advice. His role is coordination: aligning your portfolio, tax strategy, and estate structure, working alongside independent Massachusetts estate attorneys and CPAs.", }, {
-    q: "What is the Massachusetts Millionaire Surtax?", a: "A 4% surtax on annual income above an inflation-indexed threshold ($1,107,750 for tax year 2026), approved by voters effective 2023. It stacks on top of the standard 5% rate and can be triggered by a single event: a business sale, a large capital gain, or an aggressive Roth conversion.", }, {
-    q: "Do I need $2 million to work with Michael?", a: "The practice is built for Massachusetts households with $2 million or more in investable assets. That's where estate-tax coordination pays for itself many times over. If you're close to that line, it's still worth a conversation: the years before you cross it are often the best planning window.", },
+    q: "Does Massachusetts have an estate tax in 2026?",
+    a: "Yes. Massachusetts taxes estates valued over $2 million, one of the lowest thresholds in the country. Rates are graduated up to 16%, applied after a $99,600 credit that shelters the first $2 million. Families who owe nothing federally may still owe six figures to Massachusetts. (M.G.L. c. 65C, 2026.)",
+  },
+  {
+    q: "How much is the estate tax on a $3 million Massachusetts estate?",
+    a: "Approximately $82,400 before planning, under 2026 law (illustrative). The tax is computed on a graduated scale after the $99,600 credit. Coordinated trust planning can reduce this substantially. Model your own estate with the Massachusetts Estate Tax Calculator.",
+  },
+  {
+    q: "Can a married couple avoid the Massachusetts estate tax?",
+    a: "Often, largely yes, with planning. Massachusetts has no portability, so a surviving spouse cannot inherit the deceased spouse's $2 million exemption. A credit shelter (A/B) trust preserves both exemptions, shielding roughly $4 million for a couple, but only if the trust is properly drafted and funded.",
+  },
+  {
+    q: "Does life insurance count toward the Massachusetts estate tax?",
+    a: "Generally yes, if you own the policy, death benefits are included in your taxable estate even though they pass income-tax-free to beneficiaries. An Irrevocable Life Insurance Trust (ILIT), properly structured and funded, can remove the proceeds from the estate.",
+  },
+  {
+    q: "Is Michael an estate planning attorney?",
+    a: "No. Michael Cammarata is a CERTIFIED FINANCIAL PLANNER® and Managing Partner at MSA Financial, LLC. He does not draft legal documents or provide legal advice. His role is coordination: aligning your portfolio, tax strategy, and estate structure, working alongside independent Massachusetts estate attorneys and CPAs.",
+  },
+  {
+    q: "What is the Massachusetts Millionaire Surtax?",
+    a: "A 4% surtax on annual income above an inflation-indexed threshold ($1,107,750 for tax year 2026), approved by voters effective 2023. It stacks on top of the standard 5% rate and can be triggered by a single event: a business sale, a large capital gain, or an aggressive Roth conversion.",
+  },
+  {
+    q: "Do I need $2 million to work with Michael?",
+    a: "The practice is built for Massachusetts households with $2 million or more in investable assets. That's where estate-tax coordination pays for itself many times over. If you're close to that line, it's still worth a conversation: the years before you cross it are often the best planning window.",
+  },
 ];
 
-const FAQ_ITEMS: FaqItem[] = [
-  FAQ_TEXT[0], {
-    q: "How much is the estate tax on a $3 million Massachusetts estate?", a: (
-      <>
-        Approximately $82,400 before planning, under 2026 law (illustrative). The tax is computed
-        on a graduated scale after the $99,600 credit. Coordinated trust planning can reduce this
-        substantially. <Link href="/calculator">Model your own estate here</Link>.
-      </>
-    ), }, ...FAQ_TEXT.slice(1),
-];
+const FAQ_ITEMS: FaqItem[] = FAQ_TEXT.map((f, i) =>
+  i === 1
+    ? {
+        q: f.q,
+        a: (
+          <>
+            Approximately $82,400 before planning, under 2026 law (illustrative). The tax is
+            computed on a graduated scale after the $99,600 credit. Coordinated trust planning can
+            reduce this substantially. <Link href="/calculator">Model your own estate here</Link>.
+          </>
+        ),
+      }
+    : f
+);
 
 const JSON_LD = {
-  "@context": "https://schema.org", "@graph": [
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@type": ["FinancialService", "Organization"], "@id": "https://preserveyourestate.com/#org", name: "MSA Financial, LLC", url: "https://preserveyourestate.com/", foundingDate: "1997", description:
-        "Independent SEC-registered investment adviser (CRD #107768) providing coordinated wealth, estate, and tax planning across Massachusetts.", areaServed: { "@type": "State", name: "Massachusetts" }, sameAs: ["https://adviserinfo.sec.gov/firm/summary/107768"], }, {
-      "@type": "Person", "@id": "https://preserveyourestate.com/#michael", name: "Michael Cammarata", honorificSuffix: "CFP®", jobTitle: "Managing Partner", worksFor: { "@id": "https://preserveyourestate.com/#org" }, knowsAbout: [
-        "Massachusetts estate tax", "Roth conversion planning", "trust funding", "tax-efficient investing", ], }, { "@type": "WebSite", url: "https://preserveyourestate.com/", name: "Preserve My Estate" }, {
-      "@type": "FAQPage", mainEntity: FAQ_TEXT.map((f) => ({
-        "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a }, })), }, ],
+      "@type": ["FinancialService", "LocalBusiness", "Organization"],
+      "@id": "https://preserveyourestate.com/#org",
+      name: "MSA Financial",
+      legalName: "Marino, Stram & Associates, LLC",
+      alternateName: ["Preserve My Estate", "PreserveYourEstate.com", "MSA Financial, LLC"],
+      url: "https://preserveyourestate.com/",
+      foundingDate: "1997",
+      description:
+        "Independent SEC-registered investment adviser (CRD #107768) providing coordinated wealth, estate, and tax planning across Massachusetts.",
+      areaServed: { "@type": "State", name: "Massachusetts" },
+      telephone: "+17818433500",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "25 Braintree Hill Park, Suite 303",
+        addressLocality: "Braintree",
+        addressRegion: "MA",
+        postalCode: "02184",
+        addressCountry: "US",
+      },
+      logo: {
+        "@type": "ImageObject",
+        url: "https://preserveyourestate.com/og.png",
+      },
+      sameAs: ["https://adviserinfo.sec.gov/firm/summary/107768"],
+      department: [
+        {
+          "@type": "FinancialService",
+          name: "MSA Financial — Sandwich",
+          telephone: "+15088339555",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: "90 Route 6A, Unit 4A",
+            addressLocality: "Sandwich",
+            addressRegion: "MA",
+            postalCode: "02563",
+            addressCountry: "US",
+          },
+        },
+        {
+          "@type": "FinancialService",
+          name: "MSA Financial — Framingham",
+          telephone: "+15088791188",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Framingham",
+            addressRegion: "MA",
+            postalCode: "01701",
+            addressCountry: "US",
+          },
+        },
+      ],
+    },
+    {
+      "@type": "Person",
+      "@id": "https://preserveyourestate.com/#michael",
+      name: "Michael Cammarata",
+      honorificSuffix: "CFP®",
+      jobTitle: "Managing Partner",
+      url: "https://preserveyourestate.com/about",
+      worksFor: { "@id": "https://preserveyourestate.com/#org" },
+      sameAs: [
+        "https://www.linkedin.com/in/michael-cammarata-cfp",
+        "https://www.msaplan.com/team/michael-cammarata",
+      ],
+      knowsAbout: [
+        "Massachusetts estate tax",
+        "Roth conversion planning",
+        "trust funding",
+        "tax-efficient investing",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://preserveyourestate.com/#website",
+      url: "https://preserveyourestate.com/",
+      name: "Preserve My Estate",
+      alternateName: "PreserveYourEstate.com",
+      publisher: { "@id": "https://preserveyourestate.com/#org" },
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://preserveyourestate.com/#webpage",
+      url: "https://preserveyourestate.com/",
+      name: "Massachusetts Estate Tax Planning | Preserve My Estate",
+      dateModified: "2026-07-20",
+      isPartOf: { "@id": "https://preserveyourestate.com/#website" },
+      about: { "@id": "https://preserveyourestate.com/#org" },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://preserveyourestate.com/#faq",
+      dateModified: "2026-07-20",
+      isPartOf: { "@id": "https://preserveyourestate.com/#webpage" },
+      mainEntity: FAQ_TEXT.map((f) => ({
+        "@type": "Question",
+        name: f.q,
+        acceptedAnswer: { "@type": "Answer", text: f.a },
+      })),
+    },
+  ],
 };
 
 export default function Home() {
@@ -77,7 +198,7 @@ export default function Home() {
       {/* ---- Proof row: credibility before the first ask ---- */}
       <div className="proof-row" aria-label="Firm credentials">
         <span>Since 1997</span>
-        <span>~$1.5B Assets Under Management</span>
+        <span>~$1.4B AUM (as of Dec. 31, 2025)</span>
         <span>SEC-Registered RIA</span>
         <span>CFP® Fiduciary</span>
         <span>7 Advisors</span>
@@ -152,8 +273,8 @@ export default function Home() {
                   <h3>Asset Location Strategy</h3>
                   <p>
                     Tax-inefficient assets in tax-deferred accounts; tax-efficient assets in
-                    taxable accounts: a 2–8 percentage point difference in effective tax rate,
-                    compounding every year.
+                    taxable accounts. Asset location is an illustrative planning concept; any
+                    tax-rate impact depends on the household and is not a guarantee of results.
                   </p>
                 </li>
                 <li>
@@ -181,13 +302,17 @@ export default function Home() {
               </ul>
               <div className="rate-tiles reveal">
                 <div className="rate-tile">
-                  <b data-count="29" data-suffix="%">0%</b>
+                  <b data-count="29" data-suffix="%">
+                    29%
+                  </b>
                   <span>
                     Combined federal + MA + NIIT rate on capital gains for high-income earners
                   </span>
                 </div>
                 <div className="rate-tile">
-                  <b data-count="42" data-suffix="%">0%</b>
+                  <b data-count="42" data-suffix="%">
+                    42%
+                  </b>
                   <span>
                     Combined marginal rate on RMD income (37% federal + 5% MA), higher above the
                     surtax line
@@ -203,9 +328,9 @@ export default function Home() {
             <div className="chart-card reveal-scale">
               <h3>The compounding edge of asset location</h3>
               <p>
-                Placing the right assets in the right account type reduces your effective tax rate
-                by an estimated 2–8 percentage points a year: small and quiet, but compounding
-                every year you hold.
+                Placing the right assets in the right account type can reduce drag from taxes over
+                time. Any benefit is household-specific, illustrative only, and not a guarantee of
+                results.
               </p>
               <div
                 style={{
@@ -246,11 +371,11 @@ export default function Home() {
               <em>backed by a firm built since 1997</em>
             </h2>
             <p>
-              Michael Cammarata is Managing Partner at MSA Financial, LLC, an independent,
-              SEC-registered investment adviser managing roughly $1.5 billion for Massachusetts
-              families. For more than two decades, his practice has focused on the households
-              most exposed to Massachusetts&apos; estate and tax rules, in or approaching
-              retirement.
+              Michael Cammarata is Managing Partner at MSA Financial (Marino, Stram &amp;
+              Associates, LLC), an independent SEC-registered investment adviser managing
+              approximately $1.4 billion in client assets as of December 31, 2025. For more than
+              two decades, his practice has focused on the households most exposed to
+              Massachusetts&apos; estate and tax rules, in or approaching retirement.
             </p>
             <p>
               The difference is integration: estate plans that are actually funded, portfolios
@@ -271,13 +396,18 @@ export default function Home() {
               <span className="badge">RIA · MSA Financial, LLC</span>
               <span className="badge">Team of 7 Advisors</span>
             </div>
-            <a className="btn btn-navy" href="#booking">
-              Schedule a 45-Minute Review <span className="arrow">→</span>
-            </a>
+            <div className="hero-ctas" style={{ marginTop: "0.5rem" }}>
+              <a className="btn btn-navy" href="#booking">
+                Schedule the 45-Minute Review <span className="arrow">→</span>
+              </a>
+              <Link className="btn btn-ghost" href="/about">
+                About Michael
+              </Link>
+            </div>
           </div>
           <div className="about-side reveal-scale">
             <div className="portrait-card">
-              <div className="portrait-mono">MC</div>
+              <AuthorPortrait />
               <h3>Michael Cammarata, CFP®</h3>
               <p className="role">Managing Partner · MSA Financial, LLC</p>
               <p style={{ fontSize: "0.92rem" }}>
@@ -286,6 +416,11 @@ export default function Home() {
               </p>
               <hr />
               <MsaLockup />
+              <p style={{ marginTop: "1rem" }}>
+                <Link className="text-link" href="/about">
+                  Full bio &amp; credentials →
+                </Link>
+              </p>
             </div>
           </div>
         </div>
@@ -303,9 +438,21 @@ export default function Home() {
             <p className="lead">Expert-level guides. No jargon. No pitch.</p>
           </div>
           <div className="grid g3 stagger">
+            <Link className="guide-card" href="/guides/massachusetts-estate-tax">
+              <span className="guide-tag">Pillar</span>
+              <h3>Massachusetts Estate Tax Guide (2026)</h3>
+              <p>
+                Threshold, credit, rates, portability myths, and who actually pays, with links into
+                every planning guide on this site.
+              </p>
+              <span className="guide-meta">
+                <span>Start here</span>
+                <span className="text-link">Read Guide →</span>
+              </span>
+            </Link>
             <Link className="guide-card" href="/guides/ab-trust">
               <span className="guide-tag">Estate Structure</span>
-              <h3>The Marital Deduction Trust &amp; A/B Trust Planning</h3>
+              <h3>A/B Trust Planning</h3>
               <p>
                 How Credit Shelter Trusts and QTIP structures preserve both spouses&apos;
                 exemptions, with a worked example for an $8M estate.
@@ -315,32 +462,24 @@ export default function Home() {
                 <span className="text-link">Read Guide →</span>
               </span>
             </Link>
-            <a className="guide-card" href="#booking-guide">
-              <span className="guide-tag">Estate Execution</span>
-              <h3>Trust Funding &amp; Asset Titling: The Step Most Families Skip</h3>
+            <Link className="guide-card" href="/guides/federal-vs-massachusetts-estate-tax">
+              <span className="guide-tag">Comparison</span>
+              <h3>Federal vs Massachusetts Estate Tax</h3>
               <p>
-                A trust that isn&apos;t properly funded is a trust that doesn&apos;t work. The
-                asset-by-asset process for making yours real.
+                Why families under the federal exemption still face six-figure Massachusetts bills,
+                and what differs on portability and rates.
               </p>
               <span className="guide-meta">
-                <span>Free PDF guide</span>
-                <span className="text-link">Get the Guide →</span>
+                <span>Key differences</span>
+                <span className="text-link">Read Guide →</span>
               </span>
-            </a>
-            <a className="guide-card" href="#booking-guide">
-              <span className="guide-tag">Retirement Income</span>
-              <h3>The Roth Conversion Window: Your Last Decade of Tax Flexibility</h3>
-              <p>
-                The years between retirement and RMDs are a narrow, irreversible opportunity to
-                reduce lifetime taxes. How to use them.
-              </p>
-              <span className="guide-meta">
-                <span>Free PDF guide</span>
-                <span className="text-link">Get the Guide →</span>
-              </span>
-            </a>
+            </Link>
           </div>
-
+          <p style={{ marginTop: "1.6rem" }}>
+            <Link className="text-link" href="/guides">
+              See all guides →
+            </Link>
+          </p>
         </div>
       </section>
 
@@ -352,9 +491,43 @@ export default function Home() {
             <h2 style={{ margin: "1rem 0 1.2rem" }}>
               Three locations. <em>One cohesive planning team.</em>
             </h2>
-            <p className="lead" style={{ marginBottom: "1rem" }}>
-              Offices in Braintree (South Shore headquarters), Sandwich (Cape Cod &amp; the
-              Islands), and Framingham (MetroWest), serving families across Massachusetts.
+            <p className="lead" style={{ marginBottom: "1.4rem" }}>
+              South Shore headquarters in Braintree, Cape Cod in Sandwich, and MetroWest by
+              appointment in Framingham.
+            </p>
+            <ul className="loc-list">
+              <li>
+                <b>
+                  <span className="pin" aria-hidden="true">
+                    ●
+                  </span>
+                  <Link href="/locations/braintree">Braintree</Link>
+                </b>
+                <span>25 Braintree Hill Park, Suite 303 · (781) 843-3500</span>
+              </li>
+              <li>
+                <b>
+                  <span className="pin" aria-hidden="true">
+                    ●
+                  </span>
+                  <Link href="/locations/sandwich">Sandwich</Link>
+                </b>
+                <span>90 Route 6A, Unit 4A · (508) 833-9555</span>
+              </li>
+              <li>
+                <b>
+                  <span className="pin" aria-hidden="true">
+                    ●
+                  </span>
+                  <Link href="/locations/framingham">Framingham</Link>
+                </b>
+                <span>By appointment · (508) 879-1188</span>
+              </li>
+            </ul>
+            <p style={{ marginTop: "1.4rem" }}>
+              <Link className="text-link" href="/locations">
+                Explore regions &amp; communities →
+              </Link>
             </p>
           </div>
           <div className="map-card reveal-scale">
@@ -437,8 +610,7 @@ export default function Home() {
                 <li>
                   <h3>Any gaps, named in writing. Or confirmation there are none.</h3>
                   <p>
-                    Either way, from a fiduciary with no product to sell, whether or not we ever
-                    speak again.
+                    Either way, from a fiduciary advisor, whether or not we ever speak again.
                   </p>
                 </li>
               </ol>
@@ -462,34 +634,50 @@ export default function Home() {
             <h2>
               Massachusetts estate &amp; tax planning, <em>answered plainly</em>
             </h2>
+            <p className="lead" style={{ marginTop: "0.75rem" }}>
+              Updated July 2026 · Reflects current Massachusetts and federal rules
+            </p>
+          </div>
+          <div className="callout reveal" style={{ maxWidth: "820px", marginBottom: "1.5rem" }}>
+            <b>Massachusetts estate tax, in brief:</b> Estates over $2 million are taxed on a
+            graduated scale up to 16% after a $99,600 credit. There is no spousal portability.
+            See{" "}
+            <a
+              href="https://malegislature.gov/Laws/GeneralLaws/PartI/TitleIX/Chapter65C"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              M.G.L. c. 65C
+            </a>
+            .
           </div>
           <Faq items={FAQ_ITEMS} />
         </div>
       </section>
 
-      {/* ---- Guide banner: low-commitment path into the single form ---- */}
+      {/* ---- Guide banner: low-commitment path to free on-site guides ---- */}
       <section className="bg-navy guide-banner" id="guide">
         <div className="wrap reveal" style={{ textAlign: "center", maxWidth: "720px" }}>
           <p className="eyebrow">Not Ready to Talk? Start Here</p>
           <h2 style={{ margin: "1rem 0" }}>
-            The 2026 Massachusetts Pre-Retiree&apos;s Guide to <em>Estate &amp; Tax Planning</em>
+            Free Massachusetts estate &amp; tax <em>guides</em>
           </h2>
           <p className="lead" style={{ color: "var(--silver)", margin: "0 0 1.8rem" }}>
-            Twelve pages covering the six decisions Massachusetts families most often get wrong,
-            explained plainly. Free, by email.
+            Read the pillar guide on Massachusetts estate tax, then go deeper on portability, A/B
+            trusts, funding, and Roth conversions, no email wall.
           </p>
-          <a className="btn btn-gold" href="#booking-guide">
-            Get the Free Guide <span className="arrow">→</span>
-          </a>
+          <Link className="btn btn-gold" href="/guides/massachusetts-estate-tax">
+            Read the MA Estate Tax Guide <span className="arrow">→</span>
+          </Link>
         </div>
       </section>
 
       <Footer />
 
       <div className="sticky-cta">
-        <Link className="btn btn-gold" href="/calculator">
-          Calculate Your MA Estate Tax →
-        </Link>
+        <a className="btn btn-gold" href="#booking">
+          Schedule the 45-Minute Review →
+        </a>
       </div>
     </>
   );

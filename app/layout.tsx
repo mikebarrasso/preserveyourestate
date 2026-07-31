@@ -11,15 +11,35 @@ const body = Inter({
   subsets: ["latin"], variable: "--font-body", display: "swap",
 });
 
+const title = "Massachusetts Estate Tax Planning | Preserve My Estate";
+const description =
+  "Massachusetts taxes estates over $2M. Get a free estate tax estimate and coordinated planning with Michael Cammarata, CFP® at MSA Financial.";
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://preserveyourestate.com"),
   title: {
-    default:
-      "Estate & Tax-Focused Wealth Management in Massachusetts | Michael Cammarata, CFP®, MSA Financial",
+    default: title,
     template: "%s | Preserve My Estate",
   },
-  description:
-    "Massachusetts taxes estates over $2M. Michael Cammarata, CFP® coordinates wealth, estate, and tax planning for MA families, backed by MSA Financial, an independent RIA since 1997. Free MA estate tax calculator.",
+  description,
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://preserveyourestate.com",
+    siteName: "Preserve My Estate",
+    title,
+    description,
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Preserve My Estate" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/og.png"],
+  },
+  alternates: {
+    canonical: "/",
+  },
 };
 
 export default function RootLayout({

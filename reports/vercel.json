@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "destination": "/sec-marketing-compliance-review.html"
+    }
+  ]
+}

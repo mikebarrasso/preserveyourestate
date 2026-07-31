@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import { ChevronDown } from "lucide-react";
+import DeferredHeroVideo from "@/components/DeferredHeroVideo";
 
 /* Per-character blur reveal (Hero 9 pattern). `em` renders the gold accent. */
 function BlurText({ text, delay = 0, em = false }: { text: string; delay?: number; em?: boolean }) {
@@ -31,6 +32,9 @@ function BlurText({ text, delay = 0, em = false }: { text: string; delay?: numbe
               </motion.span>
             );
           })}
+          {wordIndex < words.length - 1 && (
+            <motion.span className="hero-blur-char"> </motion.span>
+          )}
         </span>
       ))}
     </span>
@@ -40,29 +44,16 @@ function BlurText({ text, delay = 0, em = false }: { text: string; delay?: numbe
 export default function Hero() {
   return (
     <section className="hero-video" id="top">
-      {/* Background footage lives in /public. Poster paints instantly before playback;
-          navy gradient shows if the video is absent. */}
-      <video
-        className="hero-bg-video"
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="auto"
-        poster="/hero-poster.jpg"
-        aria-hidden="true"
-      >
-        <source src="/hero-video.mp4" type="video/mp4" />
-      </video>
+      <DeferredHeroVideo />
       <div className="hero-video-overlay" />
 
       <div className="hero-video-inner">
         <div className="wrap hero-grid">
           <div className="hero-col-left">
             <h1>
-              <BlurText text="Coordinated" delay={0.1} />
+              <BlurText text="Coordinated" delay={0.1} />{" "}
               <br />
-              <BlurText text="estate, tax, and" delay={0.45} />
+              <BlurText text="estate, tax, and" delay={0.45} />{" "}
               <br />
               <BlurText text="wealth planning." delay={0.95} em />
             </h1>
@@ -87,7 +78,7 @@ export default function Hero() {
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             <p className="hero-video-sub">
-              Massachusetts planning for estates over $2 million.
+              Massachusetts estate tax planning for households over $2 million.
             </p>
 
             <div className="hero-ctas">
@@ -95,7 +86,7 @@ export default function Hero() {
                 Calculate My Estate Tax <span className="arrow">→</span>
               </Link>
               <a className="btn btn-ghost" href="#booking">
-                Schedule a Review
+                Schedule the 45-Minute Review
               </a>
             </div>
           </motion.div>

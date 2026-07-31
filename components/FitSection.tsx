@@ -46,7 +46,7 @@ const CRITERIA = [
     icon: Scale,
     title: "Ready for a fiduciary conversation",
     description:
-      "No products to sell, no commissions at stake. A CFP® whose job is making your estate plan, tax return, and portfolio agree.",
+      "Investment recommendations are made under a fiduciary standard. Compensation and conflicts of interest are disclosed in Form ADV and Form CRS.",
   },
 ];
 
@@ -93,10 +93,7 @@ export default function FitSection() {
             transition={{ duration: 0.4, delay: 0.2, ease: EASE }}
           >
             <a className="btn btn-gold" href="#booking">
-              Schedule a Review <span className="arrow">→</span>
-            </a>
-            <a className="btn btn-ghost" href="#booking-guide">
-              Get the Free Guide
+              Schedule the 45-Minute Review <span className="arrow">→</span>
             </a>
           </motion.div>
         </div>

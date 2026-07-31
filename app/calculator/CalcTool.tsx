@@ -160,9 +160,6 @@ export default function CalcTool() {
             <Link className="btn btn-gold" href="/#booking">
               Walk Through My Number: 45 Min, Free <span className="arrow">→</span>
             </Link>
-            <Link className="btn btn-ghost" href="/#guide">
-              Get the Full Planning Guide (PDF)
-            </Link>
           </div>
         </div>
       </div>

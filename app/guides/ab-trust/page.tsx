@@ -2,16 +2,46 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import AuthorPortrait from "@/components/AuthorPortrait";
+import { SITE_ORIGIN, articleLd, authorPerson, breadcrumbLd, publisherOrg } from "@/lib/schema";
+
+const title = "A/B Trust Planning in Massachusetts (2026)";
+const description =
+  "How A/B trusts help married Massachusetts couples use both $2M exemptions. See an $8M worked example. Read the guide by Michael Cammarata, CFP®.";
+const pageUrl = `${SITE_ORIGIN}/guides/ab-trust`;
 
 export const metadata: Metadata = {
-  title: "The Marital Deduction Trust & A/B Trust Planning in Massachusetts (2026)", description:
-    "How Credit Shelter Trusts and QTIP structures let married Massachusetts couples use both $2M exemptions, with a worked example for an $8M estate. By Michael Cammarata, CFP®.",
+  title,
+  description,
+  alternates: {
+    canonical: "/guides/ab-trust",
+  },
+  openGraph: {
+    url: pageUrl,
+    title,
+    description,
+  },
 };
 
 const JSON_LD = {
-  "@context": "https://schema.org", "@type": "Article", headline: "The Marital Deduction Trust & A/B Trust Planning in Massachusetts", description:
-    "How Credit Shelter Trusts and QTIP structures allow married Massachusetts couples to use both spouses' exemptions.", author: {
-    "@type": "Person", name: "Michael Cammarata", honorificSuffix: "CFP®", jobTitle: "Managing Partner, MSA Financial, LLC", }, publisher: { "@type": "Organization", name: "MSA Financial, LLC" }, datePublished: "2026-07-01", dateModified: "2026-07-15",
+  "@context": "https://schema.org",
+  "@graph": [
+    publisherOrg,
+    authorPerson,
+    articleLd({
+      headline: "The Marital Deduction Trust & A/B Trust Planning in Massachusetts",
+      description:
+        "How Credit Shelter Trusts and QTIP structures allow married Massachusetts couples to use both spouses' exemptions.",
+      url: pageUrl,
+      datePublished: "2026-07-01",
+      dateModified: "2026-07-20",
+    }),
+    breadcrumbLd([
+      { name: "Home", item: `${SITE_ORIGIN}/` },
+      { name: "Guides", item: `${SITE_ORIGIN}/guides` },
+      { name: "A/B Trust Planning", item: pageUrl },
+    ]),
+  ],
 };
 
 export default function AbTrustGuide() {
@@ -29,7 +59,7 @@ export default function AbTrustGuide() {
           <nav className="crumbs hero-anim d1">
             <Link href="/">Home</Link>
             <span>/</span>
-            <Link href="/#guides">Guides</Link>
+            <Link href="/guides">Guides</Link>
             <span>/</span>
             <span>A/B Trust Planning</span>
           </nav>
@@ -88,10 +118,11 @@ export default function AbTrustGuide() {
           <p>
             The QTIP Trust (Qualified Terminable Interest Property) receives the balance of the
             estate above the credit shelter amount. All income must be distributed to the surviving
-            spouse annually. The executor makes a QTIP election on Form 706, qualifying the trust
-            for the estate tax marital deduction. At the second death, the QTIP assets are included
-            in the surviving spouse&apos;s estate, but the $2M exemption applies, and the credit
-            shelter trust has already bypassed the estate.
+            spouse annually. The personal representative elects QTIP treatment for Massachusetts on{" "}
+            <b>Form M-706</b> (irrevocable; independent of any federal QTIP election on Form 706),
+            qualifying the trust for the Massachusetts marital deduction. At the second death, the
+            QTIP assets are included in the surviving spouse&apos;s estate, but the $2M credit
+            framework applies, and the credit shelter trust has already bypassed the estate.
           </p>
 
           <h3>Trust B: the Credit Shelter Trust (Bypass Trust)</h3>
@@ -117,8 +148,8 @@ export default function AbTrustGuide() {
                     <b>No trust planning</b>: everything to surviving spouse outright
                   </td>
                   <td>
-                    Full $8M in surviving spouse&apos;s estate. One $2M exemption. Tax on $6M: est.{" "}
-                    <b>~$291,200</b>.
+                    Full $8M in the surviving spouse&apos;s estate under one $2M credit framework.
+                    Estimated Massachusetts estate tax: <b>~$673,600</b>.
                   </td>
                 </tr>
                 <tr>
@@ -127,7 +158,8 @@ export default function AbTrustGuide() {
                   </td>
                   <td>
                     Credit shelter trust bypasses the estate. QTIP uses the surviving spouse&apos;s
-                    $2M exemption. Estimated tax meaningfully reduced.
+                    $2M credit framework. Estimated tax on the ~$6M QTIP estate:{" "}
+                    <b>~$411,200</b> (illustrative savings of ~$262,400 vs no planning).
                   </td>
                 </tr>
                 <tr>
@@ -135,8 +167,9 @@ export default function AbTrustGuide() {
                     <b>Credit shelter trust after 10 years</b> at 6% growth
                   </td>
                   <td>
-                    Trust may grow to ~$3.6M, all bypassing estate tax. Additional savings on
-                    $1.6M of growth: est. <b>~$128,000+</b>.
+                    Trust may grow to ~$3.6M, all bypassing the survivor&apos;s estate. If that
+                    ~$1.6M of growth stayed in the taxable estate instead, estimated extra tax is
+                    on the order of <b>~$200,000+</b> at these estate sizes.
                   </td>
                 </tr>
               </tbody>
@@ -148,12 +181,14 @@ export default function AbTrustGuide() {
             specific to your situation.
           </p>
 
-          <h2>The QTIP election under IRC §2056(b)(7)</h2>
+          <h2>The QTIP election (Massachusetts and federal)</h2>
           <p>
-            The QTIP election is made by the executor on Form 706 and is irrevocable once filed.
-            All trust income must be distributed to the surviving spouse at least annually. The
-            surviving spouse may not have a general power of appointment over the QTIP assets, this is what allows the first spouse to control the ultimate disposition to children or
-            other beneficiaries.
+            For Massachusetts estate tax, the QTIP election is made on <b>Form M-706</b> and is
+            irrevocable once filed. It is separate from any federal QTIP election under IRC
+            §2056(b)(7) on Form 706. All trust income must be distributed to the surviving spouse
+            at least annually. The surviving spouse may not have a general power of appointment
+            over the QTIP assets; that is what allows the first spouse to control the ultimate
+            disposition to children or other beneficiaries.
           </p>
 
           <h2>What a CFP® does, and doesn&apos;t do</h2>
@@ -171,12 +206,12 @@ export default function AbTrustGuide() {
           </div>
 
           <div className="byline-card">
-            <div className="portrait-mono">MC</div>
+            <AuthorPortrait />
             <div>
               <b>Michael Cammarata, CFP®</b>
               <p>
                 Managing Partner, MSA Financial, LLC (CRD #107768), an independent RIA managing
-                ~$1.5B since 1997. Michael coordinates wealth, estate, and tax planning for
+                ~$1.4B AUM as of Dec. 31, 2025. Michael coordinates wealth, estate, and tax planning for
                 Massachusetts families with $2M+ in investable assets.
               </p>
             </div>
@@ -189,14 +224,14 @@ export default function AbTrustGuide() {
             <h3>See how your Massachusetts estate is currently structured</h3>
             <p>
               A complimentary 45-minute review for Massachusetts families with $2M+ in investable
-              assets. No products. No obligation.
+              assets. Educational only. No obligation.
             </p>
             <div className="hero-ctas">
-              <Link className="btn btn-gold" href="/#booking">
-                Schedule a Complimentary Review <span className="arrow">→</span>
+              <Link className="btn btn-gold" href="/calculator">
+                See My Estate Tax Number <span className="arrow">→</span>
               </Link>
-              <Link className="btn btn-ghost" href="/calculator">
-                Try the Estate Tax Calculator
+              <Link className="btn btn-ghost" href="/#booking">
+                Schedule the 45-Minute Review
               </Link>
             </div>
           </div>

@@ -1,40 +1,25 @@
 "use client";
 
-import { useRef, useState } from "react";
-
 export type FaqItem = { q: string; a: React.ReactNode };
 
+/* Native details/summary keeps answers in the accessibility tree and readable
+   for crawlers without zero-height collapse. */
 export default function Faq({ items }: { items: FaqItem[] }) {
-  const [openIdx, setOpenIdx] = useState<number | null>(null);
-  const refs = useRef<(HTMLDivElement | null)[]>([]);
-
   return (
     <div className="faq-list reveal">
-      {items.map((item, i) => {
-        const open = openIdx === i;
-        return (
-          <div key={i} className={`faq ${open ? "open" : ""}`}>
-            <button
-              className="faq-q"
-              type="button"
-              aria-expanded={open}
-              onClick={() => setOpenIdx(open ? null : i)}
-            >
-              {item.q}
-              <span className="plus">+</span>
-            </button>
-            <div
-              className="faq-a"
-              ref={(el) => {
-                refs.current[i] = el;
-              }}
-              style={{ maxHeight: open ? refs.current[i]?.scrollHeight ?? 600 : 0 }}
-            >
-              <p>{item.a}</p>
-            </div>
+      {items.map((item, i) => (
+        <details key={i} className="faq">
+          <summary className="faq-q">
+            {item.q}
+            <span className="plus" aria-hidden="true">
+              +
+            </span>
+          </summary>
+          <div className="faq-a">
+            <p>{item.a}</p>
           </div>
-        );
-      })}
+        </details>
+      ))}
     </div>
   );
 }
