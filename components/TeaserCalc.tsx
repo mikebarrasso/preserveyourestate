@@ -33,8 +33,8 @@ export default function TeaserCalc() {
         <span className={`calc-result-num ${tax === 0 ? "zero" : ""}`}>{fmtUSD(shown)}</span>
       </div>
       <p className="fine">
-        Educational estimate under M.G.L. c. 65C (2026). Not tax advice. The full calculator
-        models married-couple planning.
+        Educational estimate under M.G.L. c. 65C (2026). Results are estimates only and are not
+        guaranteed. Not tax advice. The full calculator models married-couple planning.
       </p>
     </div>
   );

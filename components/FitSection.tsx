@@ -17,7 +17,7 @@ const CRITERIA = [
     icon: CircleDollarSign,
     title: "$2M+ in net investable assets",
     description:
-      "Planning above the Massachusetts estate tax threshold is what this practice is built for. It's where coordination pays for itself many times over.",
+      "Planning above the Massachusetts estate tax threshold is what this practice is built for. It's where coordination may pay for itself many times over.",
   },
   {
     icon: MapPin,
@@ -29,7 +29,7 @@ const CRITERIA = [
     icon: CalendarClock,
     title: "In or approaching the decade before retirement",
     description:
-      "The ten years before retirement are when most estate and tax decisions become irreversible. That window is where the leverage is.",
+      "The decade before retirement is often when estate and tax decisions become harder to unwind. That's usually when planning matters most.",
   },
   {
     icon: GitMerge,

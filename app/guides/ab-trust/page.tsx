@@ -195,7 +195,7 @@ export default function AbTrustGuide() {
               <b>Michael Cammarata, CFP®</b>
               <p>
                 Managing Partner and Owner, MSA Financial, LLC (CRD #107768), an independent RIA
-                managing ~$1.5B. Michael coordinates wealth, estate, tax, and retirement planning
+                managing ~$1.5B as of August 12, 2026. Michael coordinates wealth, estate, tax, and retirement planning
                 for Massachusetts families.
               </p>
             </div>

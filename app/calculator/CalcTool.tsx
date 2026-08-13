@@ -129,8 +129,9 @@ export default function CalcTool() {
           Educational estimate under M.G.L. c. 65C (2026): graduated rates applied via the state
           death tax credit method, less the $99,600 credit that shelters the first $2M. Married
           &ldquo;with planning&rdquo; scenario illustrates a funded credit shelter (A/B) trust
-          preserving both spouses&apos; exemptions at the second death. Not tax or legal advice, actual results depend on deductions, ownership, and elections. Verify with your CPA and
-          estate attorney.
+          preserving both spouses&apos; exemptions at the second death. Results are estimates
+          only and are not guaranteed. Not tax or legal advice; actual results depend on
+          deductions, ownership, and elections. Verify with your CPA and estate attorney.
         </p>
       </div>
 

@@ -1,8 +1,8 @@
 # PreserveMyEstate.com
 
 > Massachusetts estate & tax-focused wealth management. Michael Cammarata, CFP®,
-> Managing Partner and Owner at MSA Financial, LLC (SEC-registered RIA, CRD #107768, ~$1.5B AUM,
-> est. 1997). Offices: Braintree, Sandwich, and Framingham, MA. Educational content on
+> Managing Partner and Owner at MSA Financial, LLC (SEC-registered RIA, CRD #107768,
+> ~$1.5B AUM as of August 12, 2026, est. 1997). Offices: Braintree, Sandwich, and Framingham, MA. Educational content on
 > the Massachusetts estate tax (M.G.L. c. 65C), credit shelter / A/B trust coordination,
 > trust funding, and Roth conversion planning for households with $2M+ in investable
 > assets. All offices: (781) 843-3500. Michael is not an attorney or CPA and does not
@@ -19,6 +19,8 @@
 - [Home](https://preservemyestate.com/)
 - [Massachusetts Estate Tax Calculator](https://preservemyestate.com/calculator/)
 - [A/B Trust & Marital Deduction Trust Guide](https://preservemyestate.com/guides/ab-trust/)
+- [Privacy Policy](https://preservemyestate.com/privacy/)
+- [Website Disclosures](https://preservemyestate.com/disclosures/)
 - [Schedule a Complimentary Review](https://preservemyestate.com/#booking)
 
 ## Verification

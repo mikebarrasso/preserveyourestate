@@ -22,6 +22,10 @@ export default function Footer({ compact = false }: { compact?: boolean }) {
             <p>
               © 2026 MSA Financial, LLC · All Rights Reserved ·{" "}
               <Link href="/">PreserveMyEstate.com</Link>
+              {" · "}
+              <Link href="/privacy">Privacy Policy</Link>
+              {" · "}
+              <Link href="/disclosures">Website Disclosures</Link>
             </p>
           </div>
         </div>
@@ -98,6 +102,8 @@ export default function Footer({ compact = false }: { compact?: boolean }) {
                   SEC IAPD →
                 </a>
               </li>
+              <li><Link href="/privacy">Privacy Policy</Link></li>
+              <li><Link href="/disclosures">Website Disclosures</Link></li>
             </ul>
           </div>
         </div>
@@ -115,8 +121,10 @@ export default function Footer({ compact = false }: { compact?: boolean }) {
             Consult a qualified professional regarding your specific circumstances.
           </p>
           <p>
-            © 2026 MSA Financial, LLC · All Rights Reserved · <a href="#">Privacy Policy</a> ·{" "}
-            <a href="#">Website Disclosures</a>
+            © 2026 MSA Financial, LLC · All Rights Reserved ·{" "}
+            <Link href="/privacy">Privacy Policy</Link>
+            {" · "}
+            <Link href="/disclosures">Website Disclosures</Link>
           </p>
         </div>
       </div>
