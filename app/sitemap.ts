@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 const BASE_URL = "https://preservemyestate.com";
-const LAST_UPDATED = new Date("2026-07-29");
+const LAST_UPDATED = new Date("2026-08-12");
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
@@ -23,6 +23,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: LAST_UPDATED,
       changeFrequency: "monthly",
       priority: 0.8,
+    },
+    {
+      url: `${BASE_URL}/privacy`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "yearly",
+      priority: 0.3,
+    },
+    {
+      url: `${BASE_URL}/disclosures`,
+      lastModified: LAST_UPDATED,
+      changeFrequency: "yearly",
+      priority: 0.3,
     },
   ];
 }

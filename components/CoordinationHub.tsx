@@ -52,7 +52,7 @@ export default function CoordinationHub() {
           </motion.h2>
           <motion.p variants={fadeUp} className="lead">
             Every service runs through one CFP® who also manages the portfolio. Your
-            attorney and CPA stay yours; Michael makes the three plans agree.
+            attorney and CPA stay yours; Michael helps coordinate the three plans.
           </motion.p>
           <motion.div variants={fadeUp} className="hub-actions">
             <a className="btn btn-navy" href="#booking">
@@ -216,7 +216,8 @@ export default function CoordinationHub() {
             <span className="step-tag">Ongoing</span>
             <h3>Monitoring &amp; Maintenance</h3>
             <p>
-              Estate plans erode and tax law changes. Regular reviews keep everything current.
+              Estate plans erode and tax law changes. We aim to keep everything current with
+              regular reviews.
             </p>
           </div>
         </div>

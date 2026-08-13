@@ -73,6 +73,10 @@ test("advertises only real routes through complete crawler metadata", () => {
   assert.match(sitemap, /const BASE_URL = "https:\/\/preservemyestate\.com"/);
   assert.match(sitemap, /\$\{BASE_URL\}\/calculator/);
   assert.match(sitemap, /\$\{BASE_URL\}\/guides\/ab-trust/);
+  assert.match(sitemap, /\$\{BASE_URL\}\/privacy/);
+  assert.match(sitemap, /\$\{BASE_URL\}\/disclosures/);
+  assert.equal(existsSync(join(ROOT, "app/privacy/page.tsx")), true);
+  assert.equal(existsSync(join(ROOT, "app/disclosures/page.tsx")), true);
   assert.doesNotMatch(llms, /guides\/(?:trust-funding|roth-conversion)/);
   assert.match(calculator, /siteName: "Preserve My Estate"/);
   assert.match(guide, /siteName: "Preserve My Estate"/);

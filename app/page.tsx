@@ -48,7 +48,7 @@ const OFFICES: readonly Office[] = [
 
 const GAPS: Gap[] = [
   {
-    num: "01", title: "The Unfunded Trust", tease: "Trusts that exist on paper but were never funded don't protect anything.", impact:
+    num: "01", title: "The Unfunded Trust", tease: "Trusts that were never properly funded may not accomplish their intended goals.", impact:
       "Revocable trusts require assets to be retitled into the trust's name, but many families sign the documents and never finish the funding. The result: probate anyway, and the tax planning inside the trust never activates.", statBig: "#1", statNote:
       "Trust funding gaps are among the most frequently identified issues in Massachusetts estate plan reviews.", }, {
     num: "02", title: "No Massachusetts Portability", tease: "A surviving spouse cannot inherit your Massachusetts exemption.", impact:
@@ -60,7 +60,7 @@ const GAPS: Gap[] = [
     num: "05", title: "The Millionaire Surtax", tease: "A 4% surtax applies above the 2026 threshold of $1,107,750, stacked on top of existing rates.", impact:
       "Massachusetts voters approved a 4% income surtax effective 2023. A single large capital gain, Roth conversion, or property sale can push an otherwise ordinary year over the 2026 threshold.", statBig: "~33%", statNote: "Combined capital-gains rate above the surtax threshold (federal + NIIT + MA + 4%).", }, {
     num: "06", title: "Disconnected Professionals", tease: "Your attorney, CPA, and advisor each do their part, in isolation.", impact:
-      "The attorney drafts the trust. The CPA files the return. The advisor manages the portfolio. Each does their job well, and no one is responsible for making the three agree. The gaps between them are where plans fail.", statBig: "3", statNote: "Separate professionals who rarely coordinate, and one CFP® whose job is connecting them.", },
+      "The attorney drafts the trust. The CPA files the return. The advisor manages the portfolio. Each does their job well, and no one is responsible for making the three agree. The gaps between them are where plans can fall short.", statBig: "3", statNote: "Separate professionals who rarely coordinate, and one CFP® whose job is connecting them.", },
 ];
 
 const FAQ_TEXT: { q: string; a: string }[] = [
@@ -114,7 +114,7 @@ export default function Home() {
       {/* ---- Proof row: credibility before the first ask ---- */}
       <div className="proof-row" aria-label="Firm credentials">
         <span>Since 1997</span>
-        <span>~$1.5B Assets Under Management</span>
+        <span>~$1.5B AUM as of 8/12/2026</span>
         <span>SEC-Registered RIA</span>
         <span>CFP® Fiduciary</span>
         <span>7 Advisors</span>
@@ -126,10 +126,10 @@ export default function Home() {
           <div className="section-head reveal">
             <p className="eyebrow">Six Coordination Gaps</p>
             <h2>
-              The six places where Massachusetts estate plans <em>silently fail</em>
+              The six places where Massachusetts estate plans <em>often fall short</em>
             </h2>
             <p className="lead">
-              The gaps most commonly found in existing Massachusetts plans. They&apos;re
+              Common gaps we often find in existing Massachusetts estate plans. They&apos;re
               investment problems as much as legal ones.
             </p>
           </div>
@@ -178,8 +178,8 @@ export default function Home() {
               <em>built in, not bolted on</em>
             </h2>
             <p className="lead">
-              Investment performance matters. After-tax, after-estate-tax performance matters
-              more.
+              Investment performance matters. After-tax and after-estate-tax results are what
+              we optimize for.
             </p>
           </div>
           <div className="tax-grid">
@@ -204,15 +204,16 @@ export default function Home() {
                   <h3>Capital Gains Management</h3>
                   <p>
                     Multi-year gain recognition, tax-loss harvesting, specific-lot
-                    identification, and step-up-in-basis awareness so gains land in the right
-                    tax years.
+                    identification, and step-up-in-basis awareness, with the goal of
+                    recognizing gains in more favorable tax years.
                   </p>
                 </li>
                 <li>
                   <h3>Appreciated Asset Strategy</h3>
                   <p>
                     Donor-advised funds, charitable remainder trusts, and ILIT funding with
-                    appreciated securities reduce income and estate tax in one motion.
+                    appreciated securities may reduce income and estate tax in a single
+                    strategy.
                   </p>
                 </li>
               </ul>
@@ -233,12 +234,16 @@ export default function Home() {
               </div>
               <p className="fine" style={{ marginTop: "1.2rem" }}>
                 Individual situations vary. These figures are educational, reflect 2026
-                Massachusetts and federal law, and do not constitute tax advice. Consult your CPA
+                Massachusetts and federal law, and do not constitute tax advice. The ~$200K
+                figure is simple arithmetic: 50 bps × $2 million × 20 years, using a midpoint
+                inside Vanguard&apos;s 0–75 bps asset-location range (Kinniry et al.,{" "}
+                <em>Putting a value on your value: Quantifying Vanguard Advisor&apos;s Alpha</em>).
+                It is not compounded, not MSA performance, and not a guarantee. Consult your CPA
                 regarding your specific circumstances.
               </p>
             </div>
             <div className="chart-card reveal-scale">
-              <h3>The compounding edge of asset location</h3>
+              <h3>The long-horizon value of asset location</h3>
               <p>
                 Placing the right assets in the right account type reduces your effective tax rate
                 by an estimated 2–8 percentage points a year: small and quiet, but compounding
@@ -253,14 +258,15 @@ export default function Home() {
                   style={{
                     display: "block", fontSize: "clamp(2.2rem, 4vw, 2.9rem)", fontWeight: 600, color: "var(--gold)", lineHeight: 1.05, }}
                 >
-                  $200K–$500K+
+                  ~$200K
                 </b>
                 <span
                   style={{
                     display: "block", marginTop: "0.5rem", fontSize: "0.82rem", color: "var(--muted-ink)", lineHeight: 1.55, }}
                 >
-                  Estimated lifetime value of coordinated asset location on a $2M+ portfolio, over a
-                  20-year horizon (illustrative).
+                  Illustrative 20-year total of 50 bps a year on a $2 million portfolio, before
+                  compounding. 50 bps sits inside Vanguard&apos;s 0–75 bps asset-location range.
+                  Hypothetical arithmetic, not a prediction of client results.
                 </span>
               </div>
               <p className="fine" style={{ marginTop: "1.4rem" }}>
@@ -293,7 +299,7 @@ export default function Home() {
               For many clients, the relationship begins with a specific concern: Massachusetts
               estate-tax exposure, an outdated or unfunded trust, a business transition, a
               concentrated investment position, or uncertainty about generating dependable
-              retirement income. Michael&apos;s role is to look beyond the immediate question and
+              retirement income. Michael&apos;s goal is to look beyond the immediate question and
               determine how each decision affects the client&apos;s complete financial picture.
             </p>
             <p>
@@ -327,7 +333,7 @@ export default function Home() {
               relationship backed by the strength and resources of MSA Financial—the independent
               advisory firm he owns and leads alongside his partners. Established in 1997, MSA
               Financial is an SEC-registered investment adviser managing approximately $1.5
-              billion in client assets.
+              billion in client assets as of August 12, 2026.
             </p>
             <p>
               Michael&apos;s objective is straightforward: help clients see the entire financial
@@ -531,8 +537,8 @@ export default function Home() {
                 <li>
                   <h3>Any gaps, named in writing. Or confirmation there are none.</h3>
                   <p>
-                    Either way, from a fiduciary with no product to sell, whether or not we ever
-                    speak again.
+                    You get that in writing from a fiduciary with no product to sell, whether
+                    or not we ever work together.
                   </p>
                 </li>
               </ol>
