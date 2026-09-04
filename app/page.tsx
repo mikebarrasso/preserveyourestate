@@ -92,7 +92,7 @@ const JSON_LD = {
         "@type": "PostalAddress", streetAddress: office.streetAddress, addressLocality: office.city, addressRegion: "MA", postalCode: office.postalCode, addressCountry: "US",
       })), areaServed: { "@type": "State", name: "Massachusetts" }, sameAs: ["https://www.msaplan.com/", "https://adviserinfo.sec.gov/firm/summary/107768"], }, {
       "@type": "Person", "@id": "https://preservemyestate.com/#michael", name: "Michael Cammarata", honorificSuffix: "CFP®", jobTitle: "Managing Partner and Owner", image: "https://preservemyestate.com/michael-cammarata.jpg", worksFor: { "@id": "https://preservemyestate.com/#org" }, knowsAbout: [
-        "Massachusetts estate tax", "Roth conversion planning", "trust funding", "tax-efficient investing", ], }, { "@type": "WebSite", url: "https://preservemyestate.com/", name: "Preserve My Estate" }, {
+        "Massachusetts estate tax", "Roth conversion planning", "trust funding", "tax-efficient investing", ], }, { "@type": "WebSite", url: "https://preservemyestate.com/", name: "Preserve Your Estate" }, {
       "@type": "FAQPage", mainEntity: FAQ_TEXT.map((f) => ({
         "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a }, })), }, ],
 };
@@ -303,7 +303,7 @@ export default function Home() {
               determine how each decision affects the client&apos;s complete financial picture.
             </p>
             <p>
-              Preserve My Estate reflects an important part of Michael&apos;s practice, but not
+              Preserve Your Estate reflects an important part of Michael&apos;s practice, but not
               its full scope. His work includes comprehensive financial planning, investment
               management, retirement-income planning, Roth-conversion and RMD strategies,
               capital-gains management, charitable planning, trust-funding and beneficiary

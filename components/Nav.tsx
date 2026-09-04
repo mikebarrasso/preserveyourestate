@@ -107,7 +107,7 @@ export default function Nav({ solid = false }: { solid?: boolean }) {
         transition={{ duration: 0.6, ease: EASE }}
         aria-label="Primary"
       >
-        <Link href="/" className="nav-brand" aria-label="Preserve My Estate, home">
+        <Link href="/" className="nav-brand" aria-label="Preserve Your Estate, home">
           <BrandLogo variant="lockup" tone="dark" className="nav-brand-lockup" />
           <BrandLogo variant="monogram" tone="dark" className="nav-brand-monogram" />
         </Link>

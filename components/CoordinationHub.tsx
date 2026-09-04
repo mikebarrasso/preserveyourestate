@@ -79,7 +79,7 @@ export default function CoordinationHub() {
           whileInView="show"
           viewport={{ once: true, margin: "-80px" }}
           role="img"
-          aria-label="Service map showing trust funding, A/B trust structure, Roth and RMD strategy, Massachusetts estate tax, gains and surtax management, and attorney-CPA coordination all connected to Preserve My Estate, the planning hub"
+          aria-label="Service map showing trust funding, A/B trust structure, Roth and RMD strategy, Massachusetts estate tax, gains and surtax management, and attorney-CPA coordination all connected to Preserve Your Estate, the planning hub"
           className="hub-canvas"
         >
           <div className="hub-halo" aria-hidden="true" />
@@ -141,7 +141,7 @@ export default function CoordinationHub() {
               )}
               <BrandLogo variant="monogram" tone="dark" className="hub-brand-mark" />
               <span className="hub-center-label">
-                <b>Preserve My Estate</b>
+                <b>Preserve Your Estate</b>
                 The Planning Hub
               </span>
             </div>

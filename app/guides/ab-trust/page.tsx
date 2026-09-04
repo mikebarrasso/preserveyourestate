@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "article",
     url: "/guides/ab-trust",
-    siteName: "Preserve My Estate",
+    siteName: "Preserve Your Estate",
     title: "The Marital Deduction Trust & A/B Trust Planning in Massachusetts",
     description:
       "How Credit Shelter Trusts and QTIP structures can preserve both spouses' Massachusetts estate-tax exemptions.",

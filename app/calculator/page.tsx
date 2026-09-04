@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/calculator",
-    siteName: "Preserve My Estate",
+    siteName: "Preserve Your Estate",
     title: "Massachusetts Estate Tax Calculator (2026)",
     description:
       "Estimate your Massachusetts estate tax under 2026 law and see what coordinated planning could change.",

@@ -9,7 +9,7 @@ export default function Footer({ compact = false }: { compact?: boolean }) {
       "component": (
         <footer className="footer">
           <div className="wrap">
-            <Link href="/" className="footer-brand-link" aria-label="Preserve My Estate, home">
+            <Link href="/" className="footer-brand-link" aria-label="Preserve Your Estate, home">
               <BrandLogo variant="lockup" tone="dark" className="footer-brand-logo compact" />
             </Link>
             <div className="footer-legal" style={{ paddingTop: 0 }}>
@@ -36,7 +36,7 @@ export default function Footer({ compact = false }: { compact?: boolean }) {
       <div className="wrap">
         <div className="footer-grid">
           <div>
-            <Link href="/" className="footer-brand-link" aria-label="Preserve My Estate, home">
+            <Link href="/" className="footer-brand-link" aria-label="Preserve Your Estate, home">
               <BrandLogo variant="lockup" tone="dark" className="footer-brand-logo" />
             </Link>
             <p>
