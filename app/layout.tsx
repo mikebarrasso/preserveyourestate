@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { Source_Serif_4, Inter } from "next/font/google";
 import Effects from "@/components/Effects";
 import "./globals.css";
+import siteConfig from "../data/site-config.json";
 
-const display = Source_Serif_4({
+const display = Source_Serif_4({ 
   subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-display", display: "swap",
 });
 
@@ -12,25 +13,21 @@ const body = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://preservemyestate.com"),
+  metadataBase: new URL(siteConfig.seo.siteUrl),
   title: {
-    default:
-      "Estate & Tax-Focused Wealth Management in Massachusetts | Michael Cammarata, CFP®, MSA Financial",
-    template: "%s | Preserve My Estate",
+    default: siteConfig.seo.defaultTitle,
+    template: siteConfig.seo.titleTemplate,
   },
-  description:
-    "Massachusetts taxes estates over $2M. Michael Cammarata, CFP® coordinates wealth, estate, and tax planning for MA families, backed by MSA Financial, an independent RIA since 1997. Free MA estate tax calculator.",
+  description: siteConfig.seo.defaultDescription,
   alternates: {
     canonical: "/",
   },
   openGraph: {
     type: "website",
-    url: "https://preservemyestate.com",
-    siteName: "Preserve My Estate",
-    title:
-      "Estate & Tax-Focused Wealth Management in Massachusetts | Michael Cammarata, CFP®",
-    description:
-      "Coordinated wealth, estate, tax, and retirement planning for Massachusetts families.",
+    url: siteConfig.seo.siteUrl,
+    siteName: siteConfig.brand.displayName,
+    title: siteConfig.seo.defaultTitle,
+    description: siteConfig.seo.defaultDescription,
   },
 };
 
