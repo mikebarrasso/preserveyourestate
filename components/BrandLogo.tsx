@@ -29,7 +29,7 @@ export default function BrandLogo({
         {variant === "monogram" && (
           <span className="brand-logo-initials">
             <span>P</span>
-            <span>M</span>
+            <span>Y</span>
             <span>E</span>
           </span>
         )}
@@ -38,7 +38,7 @@ export default function BrandLogo({
       {variant === "lockup" && (
         <span className="brand-logo-wordmark">
           <span>Preserve</span>{" "}
-          <span className="brand-logo-wordmark-accent">My</span>{" "}
+          <span className="brand-logo-wordmark-accent">Your</span>{" "}
           <span>Estate</span>
         </span>
       )}
