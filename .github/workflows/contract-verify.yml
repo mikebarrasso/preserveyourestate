@@ -1,0 +1,27 @@
+name: Contract verify
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          # No `cache:` — setup-node rejects an empty-string cache value (startup
+          # failure), and imported repos synced by the conform pass may be
+          # bun/pnpm-locked with no package-lock.json for npm caching anyway.
+      # Lock-aware install: `npm ci` hard-fails without package-lock.json.
+      - run: |
+          if [ -f package-lock.json ]; then npm ci; else npm install; fi
+      # `verify` runs typecheck + unit tests + build. --if-present: on the
+      # template (and conformed repos) these scripts always
+      # exist; on imported repos mid-conform they may not yet — don't hard-fail.
+      - run: npm run verify --if-present
+      - run: npm run conformance --if-present

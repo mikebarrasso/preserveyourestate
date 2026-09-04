@@ -1,0 +1,138 @@
+{
+  "version": 3,
+  "siteId": "2113a51e-4f3a-41cd-87d2-1ef7b17a649d",
+  "leadsApiUrl": "https://attract.wealthreach.ai/api/attract/leads",
+  "analyticsEndpoint": "https://attract.wealthreach.ai/api/analytics/events",
+  "analyticsApiKey": "a1ef8379-2303-41c8-b984-404844c8a576",
+  "brand": {
+    "legalName": "MSA Financial, LLC",
+    "displayName": "MSA Financial",
+    "tagline": "Estate & Tax-Focused Wealth Management in Massachusetts",
+    "logoUrl": ""
+  },
+  "contact": {
+    "phone": "(781) 843-3500",
+    "address": "Braintree, MA (Main) · Sandwich · Framingham",
+    "calendarUrl": "/#booking"
+  },
+  "booking": {
+    "provider": "none",
+    "url": "/#booking",
+    "mode": "link"
+  },
+  "consent": {
+    "enabled": false
+  },
+  "header": {
+    "nav": [
+      {
+        "label": "The Problem",
+        "href": "/#problem"
+      },
+      {
+        "label": "How We Help",
+        "href": "/#coordination"
+      },
+      {
+        "label": "Guides",
+        "href": "/#guides"
+      },
+      {
+        "label": "About",
+        "href": "/#about"
+      },
+      {
+        "label": "FAQ",
+        "href": "/#faq"
+      }
+    ]
+  },
+  "footer": {
+    "groups": [
+      {
+        "heading": "Quick Links",
+        "links": [
+          {
+            "label": "The Problem",
+            "href": "/#problem"
+          },
+          {
+            "label": "How We Help",
+            "href": "/#coordination"
+          },
+          {
+            "label": "Guides",
+            "href": "/#guides"
+          },
+          {
+            "label": "About",
+            "href": "/#about"
+          },
+          {
+            "label": "FAQ",
+            "href": "/#faq"
+          }
+        ]
+      }
+    ],
+    "socialLinks": []
+  },
+  "seo": {
+    "defaultTitle": "MSA Financial, LLC",
+    "defaultDescription": "Massachusetts taxes estates over $2M. Michael Cammarata, CFP® coordinates wealth, estate, and tax planning for MA families, backed by MSA Financial, an independent RIA since 1997. Free MA estate tax calculator.",
+    "titleTemplate": "%s — MSA Financial",
+    "siteUrl": "https://www.preserveyourestate.com"
+  },
+  "compliance": {
+    "disclosures": [
+      "Investment advisory services are offered through MSA Financial, LLC, a Registered Investment Adviser (CRD #107768). Michael Cammarata is not an attorney or CPA and does not provide legal or tax advice. He does not draft legal documents or prepare tax returns. He coordinates with clients' existing estate attorneys and CPAs. When needed, he can help identify qualified independent professionals; clients choose and engage them directly.",
+      "Investment advisory services are offered through MSA Financial, LLC, a Registered Investment Adviser. Registration with the SEC does not imply a certain level of skill or training. This website is for educational purposes only and does not constitute legal, tax, or investment advice, or a solicitation to buy or sell any security. Michael Cammarata is not an attorney or CPA, does not provide legal advice, draft legal documents, or prepare tax returns. He coordinates with clients' existing professionals and may help identify qualified independent attorneys or CPAs when needed; clients choose and engage those professionals directly. Illustrative tax figures reflect 2026 Massachusetts and federal law and individual results will vary. Consult a qualified professional regarding your specific circumstances."
+    ]
+  },
+  "theme": {
+    "typography": {
+      "headingFont": "Source Serif 4",
+      "bodyFont": "Inter",
+      "scale": "default",
+      "headingWeight": 700
+    },
+    "mode": "light",
+    "color": {
+      "light": {
+        "primary": "#1e3a5f",
+        "primaryForeground": "#ffffff",
+        "accent": "#c9a84c",
+        "accentForeground": "#1c1917",
+        "surface": "#fafaf8",
+        "surfaceElevated": "#ffffff",
+        "foreground": "#0f172a",
+        "mutedForeground": "#5b6472",
+        "border": "#e2e5ea",
+        "shadow": "0 1px 3px rgba(15, 23, 42, 0.08)"
+      },
+      "dark": {
+        "primary": "#1e3a5f",
+        "primaryForeground": "#0b1524",
+        "accent": "#c9a84c",
+        "accentForeground": "#1c1917",
+        "surface": "#0b1220",
+        "surfaceElevated": "#151e30",
+        "foreground": "#e6eaf1",
+        "mutedForeground": "#9aa4b5",
+        "border": "#26324a",
+        "shadow": "0 1px 3px rgba(0, 0, 0, 0.5)"
+      }
+    },
+    "layout": {
+      "maxWidth": "1200px",
+      "sectionSpacing": "relaxed",
+      "borderRadius": "soft"
+    },
+    "motion": {
+      "entrance": "fade-up"
+    }
+  },
+  "framework": "nextjs_app_router",
+  "appRoot": "app",
+  "blogModel": "data-blog"
+}

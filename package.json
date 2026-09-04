@@ -7,7 +7,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "test": "node --test site-content.test.mjs"
+    "test": "node --test site-content.test.mjs",
+    "typecheck": "tsc --noEmit",
+    "lint:hardcode": "node scripts/anti-hardcode-lint.mjs",
+    "verify": "npm run typecheck && npm run build",
+    "conformance": "npm run lint:hardcode"
   },
   "dependencies": {
     "lucide-react": "^1.24.0",
