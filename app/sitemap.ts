@@ -25,6 +25,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.9,
     },
     {
+      url: `${BASE_URL}/retirement-planning`,
+      lastModified: new Date("2026-09-08"),
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
       url: `${BASE_URL}/guides/ab-trust`,
       lastModified: LAST_UPDATED,
       changeFrequency: "monthly",

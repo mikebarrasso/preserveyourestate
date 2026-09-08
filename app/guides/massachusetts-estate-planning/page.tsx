@@ -211,7 +211,9 @@ export default function MassachusettsEstatePlanningGuide() {
               Coordination can include organizing an asset and beneficiary inventory, identifying
               questions for your attorney or CPA, reviewing whether account ownership is consistent
               with signed documents, and helping keep the financial plan aligned as circumstances
-              change. It does not replace legal or tax advice.
+              change. It does not replace legal or tax advice. If retirement-account distributions or
+              Social Security timing are part of the conversation, review the related{" "}
+              <Link href="/retirement-planning">retirement income planning service</Link>.
             </p>
           </div>
 

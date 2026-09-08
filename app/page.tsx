@@ -411,18 +411,18 @@ export default function Home() {
                 <span className="text-link">Get the Guide →</span>
               </span>
             </a>
-            <a className="guide-card" href="#booking-guide">
+            <Link className="guide-card" href="/retirement-planning">
               <span className="guide-tag">Retirement Income</span>
-              <h3>The Roth Conversion Window: Your Last Decade of Tax Flexibility</h3>
+              <h3>Retirement Income Planning for Massachusetts Households</h3>
               <p>
-                The years between retirement and RMDs are a narrow, irreversible opportunity to
-                reduce lifetime taxes. How to use them.
+                How withdrawal decisions, Social Security timing, and account distributions may connect
+                with your tax and estate-planning conversations.
               </p>
               <span className="guide-meta">
-                <span>Free PDF guide</span>
-                <span className="text-link">Get the Guide →</span>
+                <span>Retirement planning service</span>
+                <span className="text-link">Explore Retirement Planning →</span>
               </span>
-            </a>
+            </Link>
           </div>
 
         </div>
