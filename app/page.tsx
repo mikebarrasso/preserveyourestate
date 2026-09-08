@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import Nav from "@/components/Nav";
@@ -11,6 +12,19 @@ import ReadinessChecklist from "@/components/ReadinessChecklist";
 import FitSection from "@/components/FitSection";
 import Faq, { type FaqItem } from "@/components/Faq";
 import { BookingForm } from "@/components/LeadForms";
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Massachusetts Estate Planning: Wealth Management | MSA Financial",
+  },
+  description:
+    "Massachusetts estate planning and tax-focused wealth management, coordinated with your attorney and CPA. Explore guidance from MSA Financial.",
+  openGraph: {
+    title: "Massachusetts Estate Planning: Wealth Management | MSA Financial",
+    description:
+      "Massachusetts estate planning and tax-focused wealth management, coordinated with your attorney and CPA. Explore guidance from MSA Financial.",
+  },
+};
 
 const MAIN_OFFICE_PHONE = "(781) 843-3500";
 const MAIN_OFFICE_PHONE_HREF = "tel:+17818433500";
