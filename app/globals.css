@@ -931,7 +931,11 @@ input[type="range"]::-moz-range-thumb { width: 22px; height: 22px; border-radius
 .byline-card p { margin: 0; font-size: 0.85rem; color: var(--muted-ink); }
 .next-step { background: linear-gradient(165deg, var(--navy-dark), var(--navy)); border-radius: var(--radius); padding: clamp(2rem, 4vw, 3rem); margin-top: 3.5rem; text-align: center; color: var(--silver); }
 .next-step h3 { color: var(--white); font-size: 1.7rem; margin-bottom: 0.8rem; }
+.next-step > p:not(.eyebrow) { color: var(--white); }
+.next-step .btn-ghost { background: rgba(255, 255, 255, 0.12); border-color: rgba(255, 255, 255, 0.78); color: var(--white); }
+.next-step .btn-ghost:hover { background: rgba(255, 255, 255, 0.2); border-color: var(--gold-pale); color: var(--white); }
 .next-step .hero-ctas { justify-content: center; margin: 1.8rem 0 0.4rem; }
+.guide-disclosure { color: var(--ink); font-size: 0.86rem; max-width: 900px; }
 
 /* ============================================================
    FLOATING PILL NAV

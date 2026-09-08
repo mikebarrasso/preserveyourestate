@@ -110,6 +110,13 @@ export default function MassachusettsEstatePlanningGuide() {
             calculation is different from a simple tax on only the amount above that line, which is
             why a current estimate can be useful when evaluating the broader planning picture.
           </p>
+          <p>
+            For families with substantial real estate, retirement accounts, concentrated business
+            ownership, life insurance, or interests held through trusts and entities, the first task
+            is often to establish a complete balance sheet. Account values alone may not tell the
+            full story. Ownership, beneficiary designations, debt, liquidity needs, and the timing
+            of a transfer can all create questions for the attorney and CPA to evaluate.
+          </p>
           <div className="callout reveal">
             <p>
               <b>Start with a current inventory.</b> Your estate may include more than an investment
@@ -142,8 +149,11 @@ export default function MassachusettsEstatePlanningGuide() {
 
           <h2>Key documents in a Massachusetts estate plan</h2>
           <p>
-            An estate planning attorney can advise on the documents that fit your situation. Many
-            plans include some combination of the following:
+            An estate planning attorney can advise on the documents that fit your situation. For a
+            sophisticated household, the documents should be read as an operating system rather than
+            a stack of forms: they establish who has authority, how assets are controlled, and how
+            decisions are carried out if a person becomes incapacitated or dies. Many plans include
+            some combination of the following:
           </p>
           <div className="grid g2 stagger">
             <div className="coord-card">
@@ -151,15 +161,17 @@ export default function MassachusettsEstatePlanningGuide() {
               <p>
                 A will can state how certain property should be distributed and name guardians for
                 minor children. It generally works alongside, rather than replaces, beneficiary
-                designations and trust planning.
+                designations and trust planning. An attorney can also explain how it coordinates
+                with property that passes by title, contract, or trust terms.
               </p>
             </div>
             <div className="coord-card">
               <h3>A revocable trust</h3>
               <p>
                 A revocable trust may be used to hold assets and provide instructions for management
-                or distribution. Its usefulness depends in part on whether assets are properly
-                titled or transferred to the trust.
+                or distribution. It can also establish successor trustee responsibilities and a
+                process for administering assets. Its usefulness depends in part on whether assets
+                are properly titled or transferred to the trust.
               </p>
             </div>
             <div className="coord-card">
@@ -186,6 +198,13 @@ export default function MassachusettsEstatePlanningGuide() {
             advises on tax matters and prepares tax returns. Michael Cammarata, CFP®, helps
             coordinate the financial planning and investment information those professionals may
             need, while you remain in control of whom you engage and the decisions you make.
+          </p>
+          <p>
+            Coordination is particularly useful when a family has multiple account types, several
+            generations of beneficiaries, closely held business interests, or a plan that has not
+            been reviewed since a major change in assets, family circumstances, residency, or tax
+            law. A structured review can organize the facts and identify decisions that merit legal
+            or tax advice. It does not substitute for that advice.
           </p>
           <div className="callout">
             <p>
@@ -229,7 +248,7 @@ export default function MassachusettsEstatePlanningGuide() {
             </div>
           </div>
 
-          <p className="fine" style={{ marginTop: "2rem" }}>
+          <p className="fine guide-disclosure" style={{ marginTop: "2rem" }}>
             Investment advisory services are offered through MSA Financial, LLC, a Registered
             Investment Adviser (CRD #107768). Michael Cammarata is not an attorney or CPA and does
             not provide legal or tax advice. He does not draft legal documents or prepare tax
