@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "article",
     url: "/guides/ab-trust",
-    siteName: "Preserve Your Estate",
+    siteName: "MSA Financial",
     title: "The Marital Deduction Trust & A/B Trust Planning in Massachusetts",
     description:
       "How Credit Shelter Trusts and QTIP structures can preserve both spouses' Massachusetts estate-tax exemptions.",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const JSON_LD = {
   "@context": "https://schema.org", "@type": "Article", headline: "The Marital Deduction Trust & A/B Trust Planning in Massachusetts", description:
     "How Credit Shelter Trusts and QTIP structures allow married Massachusetts couples to use both spouses' exemptions.", author: {
-    "@type": "Person", "@id": "https://preservemyestate.com/#michael", name: "Michael Cammarata", honorificSuffix: "CFP®", jobTitle: "Managing Partner and Owner", url: "https://preservemyestate.com/#about", image: "https://preservemyestate.com/michael-cammarata.jpg", worksFor: { "@id": "https://preservemyestate.com/#org" }, }, publisher: { "@type": "Organization", "@id": "https://preservemyestate.com/#org", name: "MSA Financial, LLC" }, datePublished: "2026-07-01", dateModified: "2026-07-29",
+    "@type": "Person", "@id": "https://www.preserveyourestate.com/#michael", name: "Michael Cammarata", honorificSuffix: "CFP®", jobTitle: "Managing Partner and Owner", url: "https://www.preserveyourestate.com/#about", image: "https://www.preserveyourestate.com/michael-cammarata.jpg", worksFor: { "@id": "https://www.preserveyourestate.com/#org" }, }, publisher: { "@type": "Organization", "@id": "https://www.preserveyourestate.com/#org", name: "MSA Financial, LLC" }, datePublished: "2026-07-01", dateModified: "2026-07-29",
 };
 
 export default function AbTrustGuide() {

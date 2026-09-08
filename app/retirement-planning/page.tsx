@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/retirement-planning",
-    siteName: "Preserve Your Estate",
+    siteName: "MSA Financial",
     title: "Retirement Income Planning in Massachusetts | Preserve Your Estate",
     description:
       "Retirement financial planning and retirement income planning for Massachusetts households, coordinated with tax, estate, and trust considerations.",
@@ -22,16 +22,16 @@ export const metadata: Metadata = {
 const JSON_LD = {
   "@context": "https://schema.org",
   "@type": "FinancialService",
-  "@id": "https://preservemyestate.com/retirement-planning#service",
+  "@id": "https://www.preserveyourestate.com/retirement-planning#service",
   name: "Retirement Income Planning",
   description:
     "Retirement income planning and financial coordination for Massachusetts households, connecting withdrawal decisions with tax, estate, and trust considerations.",
-  url: "https://preservemyestate.com/retirement-planning",
+  url: "https://www.preserveyourestate.com/retirement-planning",
   provider: {
     "@type": "FinancialService",
-    "@id": "https://preservemyestate.com/#org",
+    "@id": "https://www.preserveyourestate.com/#org",
     name: "MSA Financial, LLC",
-    url: "https://preservemyestate.com",
+    url: "https://www.preserveyourestate.com",
   },
   areaServed: { "@type": "State", name: "Massachusetts" },
   serviceType: "Retirement Income Planning",

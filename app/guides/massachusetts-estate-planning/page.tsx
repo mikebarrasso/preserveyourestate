@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "article",
     url: "/guides/massachusetts-estate-planning",
-    siteName: "Preserve Your Estate",
+    siteName: "MSA Financial",
     title: "Massachusetts Estate Planning Guide: What MA Families Need to Know (2026)",
     description:
       "A financial advisor's educational guide to estate planning in Massachusetts, including the $2M estate tax threshold and coordinated planning.",
@@ -29,19 +29,19 @@ const JSON_LD = {
     "An educational guide to estate planning in Massachusetts, the $2M estate tax threshold, essential documents, and coordinated planning.",
   author: {
     "@type": "Person",
-    "@id": "https://preservemyestate.com/#michael",
+    "@id": "https://www.preserveyourestate.com/#michael",
     name: "Michael Cammarata",
     honorificSuffix: "CFP®",
     jobTitle: "Managing Partner and Owner",
-    url: "https://preservemyestate.com/#about",
-    worksFor: { "@id": "https://preservemyestate.com/#org" },
+    url: "https://www.preserveyourestate.com/#about",
+    worksFor: { "@id": "https://www.preserveyourestate.com/#org" },
   },
   publisher: {
     "@type": "Organization",
-    "@id": "https://preservemyestate.com/#org",
+    "@id": "https://www.preserveyourestate.com/#org",
     name: "MSA Financial, LLC",
   },
-  mainEntityOfPage: "https://preservemyestate.com/guides/massachusetts-estate-planning",
+  mainEntityOfPage: "https://www.preserveyourestate.com/guides/massachusetts-estate-planning",
   datePublished: "2026-09-08",
   dateModified: "2026-09-08",
 };

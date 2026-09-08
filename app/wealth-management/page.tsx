@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: "/wealth-management",
-    siteName: "Preserve Your Estate",
+    siteName: "MSA Financial",
     title: "Tax-Efficient Wealth Management in Massachusetts | MSA Financial",
     description:
       "Wealth management that connects your investments to your estate and tax plan, with coordinated planning for Massachusetts families.",
@@ -21,16 +21,16 @@ export const metadata: Metadata = {
 const JSON_LD = {
   "@context": "https://schema.org",
   "@type": "FinancialService",
-  "@id": "https://preservemyestate.com/wealth-management#service",
+  "@id": "https://www.preserveyourestate.com/wealth-management#service",
   name: "Tax-Efficient Wealth Management",
   description:
     "Fee-based wealth management and financial coordination for Massachusetts families, connecting investment decisions with estate and tax planning.",
-  url: "https://preservemyestate.com/wealth-management",
+  url: "https://www.preserveyourestate.com/wealth-management",
   provider: {
     "@type": "FinancialService",
-    "@id": "https://preservemyestate.com/#org",
+    "@id": "https://www.preserveyourestate.com/#org",
     name: "MSA Financial, LLC",
-    url: "https://preservemyestate.com",
+    url: "https://www.preserveyourestate.com",
   },
   areaServed: { "@type": "State", name: "Massachusetts" },
   serviceType: "Tax-Efficient Wealth Management",

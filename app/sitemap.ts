@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://preservemyestate.com";
+const BASE_URL = "https://www.preserveyourestate.com";
 const LAST_UPDATED = new Date("2026-08-12");
 
 export default function sitemap(): MetadataRoute.Sitemap {

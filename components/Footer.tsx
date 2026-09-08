@@ -18,7 +18,7 @@ export default function Footer({ compact = false }: { compact?: boolean }) {
               </p>
               <p>
                 © 2026 {siteConfig.brand.legalName} · All Rights Reserved ·{" "}
-                <Link href="/">PreserveMyEstate.com</Link>
+                <Link href="/">PreserveYourEstate.com</Link>
                 {" · "}
                 <Link href="/privacy">Privacy Policy</Link>
                 {" · "}

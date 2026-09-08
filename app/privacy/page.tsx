@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description:
-    "How MSA Financial, LLC collects, uses, and protects information submitted through PreserveMyEstate.com.",
+    "How MSA Financial, LLC collects, uses, and protects information submitted through PreserveYourEstate.com.",
   alternates: { canonical: "/privacy" },
 };
 
@@ -29,7 +29,7 @@ export default function PrivacyPage() {
           <p className="lead hero-anim d3">
             Effective August 12, 2026. This policy describes how MSA Financial, LLC
             (&ldquo;MSA,&rdquo; &ldquo;we,&rdquo; or &ldquo;us&rdquo;) handles information collected
-            through PreserveMyEstate.com.
+            through PreserveYourEstate.com.
           </p>
         </div>
       </section>
@@ -37,7 +37,7 @@ export default function PrivacyPage() {
       <section>
         <div className="wrap article">
           <p>
-            PreserveMyEstate.com is an educational website of MSA Financial, LLC, an SEC-registered
+            PreserveYourEstate.com is an educational website of MSA Financial, LLC, an SEC-registered
             investment adviser (CRD #107768). Firm-wide privacy practices for advisory clients are
             also described in MSA&apos;s{" "}
             <a

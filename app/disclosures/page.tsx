@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Website Disclosures",
   description:
-    "Important disclosures for PreserveMyEstate.com, an educational website of MSA Financial, LLC, an SEC-registered investment adviser.",
+    "Important disclosures for PreserveYourEstate.com, an educational website of MSA Financial, LLC, an SEC-registered investment adviser.",
   alternates: { canonical: "/disclosures" },
 };
 
