@@ -88,30 +88,82 @@ export default function WealthManagementPage() {
             attorney so the professionals you choose can work from a clearer, more complete picture.
           </p>
 
+          <h2>Why tax-efficient wealth management matters</h2>
+          <p>
+            Taxes can affect the value available to spend, give, or transfer, but they are only one
+            part of a financial decision. A withdrawal, account transfer, change in ownership, or
+            estate-planning decision may have consequences beyond the account where it begins. A
+            tax-aware approach keeps those questions visible before they become isolated decisions.
+          </p>
+          <p>
+            For Massachusetts families, the connection can be especially important when retirement
+            income, concentrated family assets, real estate, charitable goals, or estate-tax exposure
+            are part of the picture. Tax rules can change, and the appropriate approach depends on
+            individual circumstances, which is why legal and tax questions remain with your attorney
+            and CPA.
+          </p>
+
+          <h2>What a tax-efficient approach looks at</h2>
+          <ul className="strategy-list stagger">
+            <li>
+              <h3>Account-level context</h3>
+              <p>
+                How account types, ownership, and beneficiary designations fit the financial plan and
+                the questions your other professionals need to evaluate.
+              </p>
+            </li>
+            <li>
+              <h3>Timing and cash-flow needs</h3>
+              <p>
+                How planned withdrawals, income needs, and major financial decisions may interact with
+                the current tax year and your longer-term plan.
+              </p>
+            </li>
+            <li>
+              <h3>Estate and trust alignment</h3>
+              <p>
+                Whether account registrations and beneficiary information are consistent with the
+                documents your estate attorney has prepared, including any trust-funding follow-up.
+              </p>
+            </li>
+            <li>
+              <h3>Ongoing coordination</h3>
+              <p>
+                A clearer process for sharing relevant financial information with your CPA and estate
+                attorney as circumstances, family decisions, or laws change.
+              </p>
+            </li>
+          </ul>
+          <p>
+            This approach is designed to help organize decisions and identify questions, not to
+            guarantee a tax result or replace the advice of your CPA or attorney.
+          </p>
+
           <h2>How the service works</h2>
-          <div className="grid g3 stagger">
-            <div className="coord-card">
-              <h3>Start with the full picture</h3>
-              <p>
-                We review financial accounts, cash-flow needs, account registrations, beneficiary
-                designations, insurance, real estate, and other information relevant to your financial
-                plan.
-              </p>
+          <div className="process-grid">
+            <div className="step">
+              <div className="step-dot">1</div>
+              <span className="step-tag">Review</span>
+              <h3>Gather the full picture</h3>
+              <p>Bring together accounts, cash-flow needs, estate documents, and key planning questions.</p>
             </div>
-            <div className="coord-card">
-              <h3>Connect investment and planning decisions</h3>
-              <p>
-                Investment management is considered alongside your retirement, estate, and tax
-                planning questions. Tax treatment can change and should be evaluated with your CPA.
-              </p>
+            <div className="step">
+              <div className="step-dot">2</div>
+              <span className="step-tag">Connect</span>
+              <h3>Put decisions in context</h3>
+              <p>Consider investment decisions alongside retirement, estate, and tax-planning priorities.</p>
             </div>
-            <div className="coord-card">
-              <h3>Coordinate with your professionals</h3>
-              <p>
-                Your attorney provides legal advice and prepares legal documents. Your CPA provides
-                tax advice and prepares tax returns. MSA Financial coordinates the financial planning
-                information relevant to those discussions.
-              </p>
+            <div className="step">
+              <div className="step-dot">3</div>
+              <span className="step-tag">Coordinate</span>
+              <h3>Work with your professionals</h3>
+              <p>Share relevant financial information with the CPA and estate attorney you choose.</p>
+            </div>
+            <div className="step">
+              <div className="step-dot">4</div>
+              <span className="step-tag">Maintain</span>
+              <h3>Revisit as life changes</h3>
+              <p>Review the plan as financial, family, or legal circumstances change.</p>
             </div>
           </div>
 
